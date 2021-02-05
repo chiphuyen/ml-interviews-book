@@ -16,3 +16,5 @@ However, some mathematical background will be helpful to the following.
 5. create new models.
 
 This section covers the following branches of math that are important in ML: algebra, probability and statistics, dimensionality reduction, and very little calculus and convex optimization. This list is far from exhaustive. For example, graph theory, logic, topology, and other mathematical branches occur frequently in ML but aren’t included here.
+
+_If some characters seem to be missing, it's because MathJax is not loaded correctly. Refreshing the page should fix it._

@@ -4,3 +4,4 @@ auto_page_creation.ipynb
 update.sh
 node_modules/*
 package-lock.json
+_book/gitbook/gitbook-plugin-livereload/*
