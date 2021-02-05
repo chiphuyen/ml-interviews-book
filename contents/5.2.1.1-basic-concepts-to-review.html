@@ -1,0 +1,1969 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-103070243-5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-103070243-5');
+		</script>
+		<!-- End global site tag (gtag.js) - Google Analytics -->
+        <meta charset="UTF-8">
+        <title>5.2.1.1 Basic concepts to review · MLIB</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.16">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5.2.1.2-questions.html" />
+    
+    
+    <link rel="prev" href="5.2.1-probability.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction to Machine Learning Interviews Book
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="0-target-audience.html">
+            
+                <a href="0-target-audience.html">
+            
+                    
+                    Target audience
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="0-about-the-questions.html">
+            
+                <a href="0-about-the-questions.html">
+            
+                    
+                    About the questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="0-about-the-answers.html">
+            
+                <a href="0-about-the-answers.html">
+            
+                    
+                    About the answers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="0-gaming-the-interview-process.html">
+            
+                <a href="0-gaming-the-interview-process.html">
+            
+                    
+                    Gaming the interview process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="0-acknowledgments.html">
+            
+                <a href="0-acknowledgments.html">
+            
+                    
+                    Acknowledgments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="0-about-the-author.html">
+            
+                <a href="0-about-the-author.html">
+            
+                    
+                    About the author
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="part-i.-overview.html">
+            
+                <a href="part-i.-overview.html">
+            
+                    
+                    Part I. Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="chapter-1.-ml-jobs.html">
+            
+                <a href="chapter-1.-ml-jobs.html">
+            
+                    
+                    Chapter 1. Machine learning jobs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="1.1-different-ml-roles.html">
+            
+                <a href="1.1-different-ml-roles.html">
+            
+                    
+                    1.1 Different machine learning roles
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="1.1.1-working-in-research-vs.-workingin-production.html">
+            
+                <a href="1.1.1-working-in-research-vs.-workingin-production.html">
+            
+                    
+                    1.1.1 Working in research vs. working in production
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="1.1.2-research.html">
+            
+                <a href="1.1.2-research.html">
+            
+                    
+                    1.1.2 Research
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.2.1" data-path="1.1.2.1-research-vs.-applied-research.html">
+            
+                <a href="1.1.2.1-research-vs.-applied-research.html">
+            
+                    
+                    1.1.2.1 Research vs. applied research
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2.2" data-path="1.1.2.2-research-scientist-vs.-research-engineer.html">
+            
+                <a href="1.1.2.2-research-scientist-vs.-research-engineer.html">
+            
+                    
+                    1.1.2.2 Research scientist vs. research engineer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="1.1.3-production.html">
+            
+                <a href="1.1.3-production.html">
+            
+                    
+                    1.1.3 Production
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.3.1" data-path="1.1.3.1-production-cycle.html">
+            
+                <a href="1.1.3.1-production-cycle.html">
+            
+                    
+                    1.1.3.1 Production cycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3.2" data-path="1.1.3.2-machine-learning-engineer-vs.-software-engineer.html">
+            
+                <a href="1.1.3.2-machine-learning-engineer-vs.-software-engineer.html">
+            
+                    
+                    1.1.3.2 Machine learning engineer vs. software engineer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3.3" data-path="1.1.3.3-machine-learning-engineer-vs.-data-scientist.html">
+            
+                <a href="1.1.3.3-machine-learning-engineer-vs.-data-scientist.html">
+            
+                    
+                    1.1.3.3 Machine learning engineer vs. data scientist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3.4" data-path="1.1.3.4-other-technical-roles-in-ml-production.html">
+            
+                <a href="1.1.3.4-other-technical-roles-in-ml-production.html">
+            
+                    
+                    1.1.3.4 Other technical roles in ML production
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3.5" data-path="1.1.3.5-understanding-roles-and-titles.html">
+            
+                <a href="1.1.3.5-understanding-roles-and-titles.html">
+            
+                    
+                    1.1.3.5 Understanding roles and titles
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="1.2-types-of-companies.html">
+            
+                <a href="1.2-types-of-companies.html">
+            
+                    
+                    1.2 Types of companies
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="1.2.1-applications-companies-vs.-tooling-companies.html">
+            
+                <a href="1.2.1-applications-companies-vs.-tooling-companies.html">
+            
+                    
+                    1.2.1 Applications companies vs. tooling companies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="1.2.2-enterprise-vs.-consumer-products.html">
+            
+                <a href="1.2.2-enterprise-vs.-consumer-products.html">
+            
+                    
+                    1.2.2 Enterprise vs. consumer products
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.3" data-path="1.2.3-startups-or-big-companies.html">
+            
+                <a href="1.2.3-startups-or-big-companies.html">
+            
+                    
+                    1.2.3 Startups or big companies
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="chapter-2.-machine-learning-interview-process.html">
+            
+                <a href="chapter-2.-machine-learning-interview-process.html">
+            
+                    
+                    Chapter 2. Machine learning interview process
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="2.1-understanding-the-interviewers’-mindset.html">
+            
+                <a href="2.1-understanding-the-interviewers’-mindset.html">
+            
+                    
+                    2.1 Understanding the interviewers’ mindset
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="2.1.1-what-companies-want-from-candidates.html">
+            
+                <a href="2.1.1-what-companies-want-from-candidates.html">
+            
+                    
+                    2.1.1 What companies want from candidates
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1.1" data-path="2.1.1.1-technical-skills.html">
+            
+                <a href="2.1.1.1-technical-skills.html">
+            
+                    
+                    2.1.1.1 Technical skills
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.1.2" data-path="2.1.1.2-non-technical-skills.html">
+            
+                <a href="2.1.1.2-non-technical-skills.html">
+            
+                    
+                    2.1.1.2 Non-technical skills
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.1.3" data-path="2.1.1.3-what-exactly-is-culture-fit.html">
+            
+                <a href="2.1.1.3-what-exactly-is-culture-fit.html">
+            
+                    
+                    2.1.1.3 What exactly is culture fit?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.1.4" data-path="2.1.1.4-junior-vs-senior-roles.html">
+            
+                <a href="2.1.1.4-junior-vs-senior-roles.html">
+            
+                    
+                    2.1.1.4 Junior vs senior roles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.1.5" data-path="2.1.1.5-do-i-need-a-ph.d.-to-work-in-machine-learning.html">
+            
+                <a href="2.1.1.5-do-i-need-a-ph.d.-to-work-in-machine-learning.html">
+            
+                    
+                    2.1.1.5 Do I need a Ph.D. to work in machine learning?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2" data-path="2.1.2-how-companies-source-candidates.html">
+            
+                <a href="2.1.2-how-companies-source-candidates.html">
+            
+                    
+                    2.1.2 How companies source candidates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.3" data-path="2.1.3-what-signals-companies-look-for-in-candidates.html">
+            
+                <a href="2.1.3-what-signals-companies-look-for-in-candidates.html">
+            
+                    
+                    2.1.3 What signals companies look for in candidates
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="2.2-interview-pipeline.html">
+            
+                <a href="2.2-interview-pipeline.html">
+            
+                    
+                    2.2 Interview pipeline
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.1" data-path="2.2.1-common-interview-formats.html">
+            
+                <a href="2.2.1-common-interview-formats.html">
+            
+                    
+                    2.2.1 Common interview formats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2" data-path="2.2.2-alternative-interview-formats.html">
+            
+                <a href="2.2.2-alternative-interview-formats.html">
+            
+                    
+                    2.2.2 Alternative interview formats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3" data-path="2.2.3-interviews-at-big-companies-vs.-at-small-companies.html">
+            
+                <a href="2.2.3-interviews-at-big-companies-vs.-at-small-companies.html">
+            
+                    
+                    2.2.3 Interviews at big companies vs. at small companies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.4" data-path="2.2.4-interviews-for-internships-vs.-for-full-time-positions.html">
+            
+                <a href="2.2.4-interviews-for-internships-vs.-for-full-time-positions.html">
+            
+                    
+                    2.2.4 Interviews for internships vs. for full-time positions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="2.3-types-of-questions.html">
+            
+                <a href="2.3-types-of-questions.html">
+            
+                    
+                    2.3 Types of questions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.3.1" data-path="2.3.1-behavioral-questions.html">
+            
+                <a href="2.3.1-behavioral-questions.html">
+            
+                    
+                    2.3.1 Behavioral questions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.3.1.1" data-path="2.3.1.1-background-and-resume.html">
+            
+                <a href="2.3.1.1-background-and-resume.html">
+            
+                    
+                    2.3.1.1 Background and resume
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.1.2" data-path="2.3.1.2-interests.html">
+            
+                <a href="2.3.1.2-interests.html">
+            
+                    
+                    2.3.1.2 Interests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.1.3" data-path="2.3.1.3-communication.html">
+            
+                <a href="2.3.1.3-communication.html">
+            
+                    
+                    2.3.1.3 Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.1.4" data-path="2.3.1.4-personality.html">
+            
+                <a href="2.3.1.4-personality.html">
+            
+                    
+                    2.3.1.4 Personality
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.2" data-path="2.3.2-questions-to-ask-your-interviewers.html">
+            
+                <a href="2.3.2-questions-to-ask-your-interviewers.html">
+            
+                    
+                    2.3.2 Questions to ask your interviewers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.3" data-path="2.3.3-bad-interview-questions.html">
+            
+                <a href="2.3.3-bad-interview-questions.html">
+            
+                    
+                    2.3.3 Bad interview questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="2.4-red-flags.html">
+            
+                <a href="2.4-red-flags.html">
+            
+                    
+                    2.4 Red flags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="2.5-timeline.html">
+            
+                <a href="2.5-timeline.html">
+            
+                    
+                    2.5 Timeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="2.6-understanding-your-odds.html">
+            
+                <a href="2.6-understanding-your-odds.html">
+            
+                    
+                    2.6 Understanding your odds
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="chapter-3.-after-an-offer.html">
+            
+                <a href="chapter-3.-after-an-offer.html">
+            
+                    
+                    Chapter 3. After an offer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="3.1-compensation-package.html">
+            
+                <a href="3.1-compensation-package.html">
+            
+                    
+                    3.1 Compensation package
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="3.1.1-base-salary.html">
+            
+                <a href="3.1.1-base-salary.html">
+            
+                    
+                    3.1.1 Base salary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="3.1.2-equity-grants.html">
+            
+                <a href="3.1.2-equity-grants.html">
+            
+                    
+                    3.1.2 Equity grants
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="3.1.3-bonuses.html">
+            
+                <a href="3.1.3-bonuses.html">
+            
+                    
+                    3.1.3 Bonuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.4" data-path="3.1.4-compensation-packages-at-different-levels.html">
+            
+                <a href="3.1.4-compensation-packages-at-different-levels.html">
+            
+                    
+                    3.1.4 Compensation packages at different levels
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="3.2-negotiation.html">
+            
+                <a href="3.2-negotiation.html">
+            
+                    
+                    3.2 Negotiation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="3.2.1-compensation-expectations.html">
+            
+                <a href="3.2.1-compensation-expectations.html">
+            
+                    
+                    3.2.1 Compensation expectations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="3.3-career-progression.html">
+            
+                <a href="3.3-career-progression.html">
+            
+                    
+                    3.3 Career progression
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="chapter-4.-where-to-start.html">
+            
+                <a href="chapter-4.-where-to-start.html">
+            
+                    
+                    Chapter 4. Where to start
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="4.1-how-long-do-i-need-for-my-job-search.html">
+            
+                <a href="4.1-how-long-do-i-need-for-my-job-search.html">
+            
+                    
+                    4.1 How long do I need for my job search?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="4.2-how-other-people-did-it.html">
+            
+                <a href="4.2-how-other-people-did-it.html">
+            
+                    
+                    4.2 How other people did it
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="4.3-resources.html">
+            
+                <a href="4.3-resources.html">
+            
+                    
+                    4.3 Resources
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.3.1" data-path="4.3.1-courses.html">
+            
+                <a href="4.3.1-courses.html">
+            
+                    
+                    4.3.1 Courses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3.2" data-path="4.3.2-books-&-articles.html">
+            
+                <a href="4.3.2-books-&-articles.html">
+            
+                    
+                    4.3.2 Books & articles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3.3" data-path="4.3.3-other-resources.html">
+            
+                <a href="4.3.3-other-resources.html">
+            
+                    
+                    4.3.3 Other resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="4.4-do’s-and-don’ts-for-ml-interviews.html">
+            
+                <a href="4.4-do’s-and-don’ts-for-ml-interviews.html">
+            
+                    
+                    4.4 Do’s and don’ts for ML interviews
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.4.1" data-path="4.4.1-do’s.html">
+            
+                <a href="4.4.1-do’s.html">
+            
+                    
+                    4.4.1 Do’s
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4.2" data-path="4.4.2-don’ts.html">
+            
+                <a href="4.4.2-don’ts.html">
+            
+                    
+                    4.4.2 Don’ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="part-ii.-questions.html">
+            
+                <a href="part-ii.-questions.html">
+            
+                    
+                    Part II: Questions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="chapter-5.-math.html">
+            
+                <a href="chapter-5.-math.html">
+            
+                    
+                    Chapter 5. Math
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="notation.html">
+            
+                <a href="notation.html">
+            
+                    
+                    Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="5.1-algebra-and-calculus.html">
+            
+                <a href="5.1-algebra-and-calculus.html">
+            
+                    
+                    5.1 Algebra and (little) calculus
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1" data-path="5.1.1-vectors.html">
+            
+                <a href="5.1.1-vectors.html">
+            
+                    
+                    5.1.1 Vectors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2" data-path="5.1.2-matrices.html">
+            
+                <a href="5.1.2-matrices.html">
+            
+                    
+                    5.1.2 Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.3" data-path="5.1.3-dimensionality-reduction.html">
+            
+                <a href="5.1.3-dimensionality-reduction.html">
+            
+                    
+                    5.1.3 Dimensionality reduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.4" data-path="5.1.4-calculus-and-convex-optimization.html">
+            
+                <a href="5.1.4-calculus-and-convex-optimization.html">
+            
+                    
+                    5.1.4 Calculus and convex optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="5.2-probability-and-statistics.html">
+            
+                <a href="5.2-probability-and-statistics.html">
+            
+                    
+                    5.2 Probability and statistics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.3.1" data-path="5.2.1-probability.html">
+            
+                <a href="5.2.1-probability.html">
+            
+                    
+                    5.2.1 Probability
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1.3.1.1" data-path="5.2.1.1-basic-concepts-to-review.html">
+            
+                <a href="5.2.1.1-basic-concepts-to-review.html">
+            
+                    
+                    5.2.1.1 Basic concepts to review
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3.1.2" data-path="5.2.1.2-questions.html">
+            
+                <a href="5.2.1.2-questions.html">
+            
+                    
+                    5.2.1.2 Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3.2" data-path="5.2.2-stats.html">
+            
+                <a href="5.2.2-stats.html">
+            
+                    
+                    5.2.2 Stats
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="chapter-6.-computer-science.html">
+            
+                <a href="chapter-6.-computer-science.html">
+            
+                    
+                    Chapter 6. Computer Science
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="6.1-algorithms.html">
+            
+                <a href="6.1-algorithms.html">
+            
+                    
+                    6.1 Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="6.2-complexity-and-numerical-analysis.html">
+            
+                <a href="6.2-complexity-and-numerical-analysis.html">
+            
+                    
+                    6.2 Complexity and numerical analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="6.3-data.html">
+            
+                <a href="6.3-data.html">
+            
+                    
+                    6.3 Data
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.3.1" data-path="6.3.1-data-structures.html">
+            
+                <a href="6.3.1-data-structures.html">
+            
+                    
+                    6.3.1 Data structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="chapter-7.-machine-learning-workflows.html">
+            
+                <a href="chapter-7.-machine-learning-workflows.html">
+            
+                    
+                    Chapter 7. Machine learning workflows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="7.1-basics.html">
+            
+                <a href="7.1-basics.html">
+            
+                    
+                    7.1 Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="7.2-sampling-and-creating-training-data.html">
+            
+                <a href="7.2-sampling-and-creating-training-data.html">
+            
+                    
+                    7.2 Sampling and creating training data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="7.3-objective-functions,-metrics,-and-evaluation.html">
+            
+                <a href="7.3-objective-functions,-metrics,-and-evaluation.html">
+            
+                    
+                    7.3 Objective functions, metrics, and evaluation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="chapter-8.-machine-learning-algorithms.html">
+            
+                <a href="chapter-8.-machine-learning-algorithms.html">
+            
+                    
+                    Chapter 8. Machine learning algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="8.1-classical-machine-learning.html">
+            
+                <a href="8.1-classical-machine-learning.html">
+            
+                    
+                    8.1 Classical machine learning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1.1" data-path="8.1.1-overview:-basic-algorithm.html">
+            
+                <a href="8.1.1-overview:-basic-algorithm.html">
+            
+                    
+                    8.1.1 Overview: Basic algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.2" data-path="8.1.2-questions.html">
+            
+                <a href="8.1.2-questions.html">
+            
+                    
+                    8.1.2 Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="8.2-deep-learning-architectures-and-applications.html">
+            
+                <a href="8.2-deep-learning-architectures-and-applications.html">
+            
+                    
+                    8.2 Deep learning architectures and applications
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.2.1" data-path="8.2.1-natural-language-processing.html">
+            
+                <a href="8.2.1-natural-language-processing.html">
+            
+                    
+                    8.2.1 Natural language processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.2" data-path="8.2.2-computer-vision.html">
+            
+                <a href="8.2.2-computer-vision.html">
+            
+                    
+                    8.2.2 Computer vision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.3" data-path="8.2.3-reinforcement-learning.html">
+            
+                <a href="8.2.3-reinforcement-learning.html">
+            
+                    
+                    8.2.3 Reinforcement learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.4" data-path="8.2.4-other.html">
+            
+                <a href="8.2.4-other.html">
+            
+                    
+                    8.2.4 Other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="8.3-training-neural-networks.html">
+            
+                <a href="8.3-training-neural-networks.html">
+            
+                    
+                    8.3 Training neural networks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="appendix.html">
+            
+                <a href="appendix.html">
+            
+                    
+                    Appendix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="a.-for-interviewers.html">
+            
+                <a href="a.-for-interviewers.html">
+            
+                    
+                    A. For interviewers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="the-zen-of-interviews.html">
+            
+                <a href="the-zen-of-interviews.html">
+            
+                    
+                    The zen of interviews
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="b.-building-your-network.html">
+            
+                <a href="b.-building-your-network.html">
+            
+                    
+                    B. Building your network
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5.2.1.1 Basic concepts to review</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h5 id="5211-basic-concepts-to-review">5.2.1.1 Basic concepts to review</h5>
+<h6 id="random-variable">Random variable</h6>
+<p>Formally, a random variable is a measurable function <script type="math/tex; ">X: \Omega \rightarrow  E</script> from a set of possible outcomes <script type="math/tex; ">\Omega</script> to a measurable space <script type="math/tex; ">E</script>. The probability that <script type="math/tex; ">X</script> takes on a value in a measurable set <script type="math/tex; ">S \subseteq E</script> is written as:</p>
+<p><script type="math/tex; ">P(X \in S) = P({\omega \in \Omega | X(\omega) \in S})</script>, where <script type="math/tex; ">P</script> is the probability measure on <script type="math/tex; ">(\Omega, F)</script>. </p>
+<p>The randomness comes from the randomness of the outcomes in <script type="math/tex; ">\Omega</script>.</p>
+<p>Informally, a random variable is a variable that probabilistically takes on different values. You can think of a random variable as being like a variable in a programming language. They take on values, have types, and have domains over which they are applicable.</p>
+<p><em>Random variable</em> is a general concept. Almost everything in life can be described using a random variable. The time it takes you to commute to work is a normal random variable. The number of people you date before finding your life partner is a geometric random variable.</p>
+<h6 id="probability-distribution">Probability distribution</h6>
+<p>A probability distribution is a function that describes possible outcomes of a random variable along with its corresponding probabilities.</p>
+<h6 id="normal-random-variable">Normal random variable</h6>
+<p>Also known as the Gaussian random variable, this is the single most important random variable. It&apos;s parameterized by a random variable, parametrized by a mean <script type="math/tex; ">\mu</script> and variance <script type="math/tex; ">\sigma^2</script>.</p>
+<p><script type="math/tex; mode=display">
+    X \sim N(\mu, \sigma^2) \\
+    f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp(-\frac{(x-\mu)^2}{2\sigma^2})
+</script></p>
+<p>The term we want to go over in this function is <script type="math/tex; ">-\frac{(x-\mu)^2}{2\sigma^2}</script>. Intuitively, it punishes the value far away from the mean, but the punishment is less when the variance is high. The term <script type="math/tex; ">\frac{1}{\sigma\sqrt{2\pi}}</script> is normalization so that it integrates to 1.</p>
+<p><script type="math/tex; mode=display">
+    E[X] = \mu \\
+    Var(X) = \sigma^2
+</script></p>
+<p>Here is the PDF of the normal distribution with different parameters.</p>
+<center>
+    <img src="images/image19.png" width="70%" alt="PDF of normal distributions" title="image_tooltip">
+</center>
+
+<h6 id="categorical-distribution">Categorical distribution</h6>
+<p>Also known as the multinoulli distribution, the categorical distribution is a generalization of the Bernoulli distribution. It describes the possible results of a random variable that can take on one of <script type="math/tex; ">k</script> possible categories, with the probability of each category separately specified.</p>
+<p><script type="math/tex; mode=display">
+    X \in \text{Cat}(\phi); \phi = (p_1, p_2, ..., p_k) \text{ and }\sum_{i=1}^kp_i = 1
+</script></p>
+<h6 id="binomial-random-variable">Binomial random variable</h6>
+<p>A binomial random variable represents the number of successes in n successive independent trials, each succeeding with probability <script type="math/tex; ">p</script> and failing with probability <script type="math/tex; ">1-p</script>. One example is the number of heads in <script type="math/tex; ">n</script> coin flips, each with a 0.5 probability of landing head. The binomial distribution is the basis for the binomial test for statistical significance. When there&apos;s only 1 trial, it&apos;s known as the Bernoulli distribution.
+<script type="math/tex; mode=display">
+    X \sim \text{Bin}(n, p) \\
+    P(X=k) = {n \choose k} p^k(1-p)^{n-k} \\
+    E[X] = np \\
+    Var(X) = np(1-p)
+</script></p>
+<p>Below is the PMF of the binomial distribution with different parameters.</p>
+<center>
+    <img src="images/image20.png" width="70%" alt="PMF of binomial distributions" title="image_tooltip">
+</center>
+
+<h6 id="multinomial-random-variable">Multinomial random variable</h6>
+<p>The multinomial random variable is a generalization of the binomial distribution. Instead of having only two outcomes like with a coin flip, it can have multiple outcomes like with a k-sided die. When the number of trials is 1, it&apos;s the categorical distribution.
+<script type="math/tex; mode=display">
+    X \sim \text{Multi}(n, \pi) \text{ with } \pi = (p_1,p_2, ..., p_k ) \text{ and }\sum_{i=1}^kp_i = 1 \\
+    P(X=(x_1, x_2, ..., x_k)) = \frac{n!}{x_1!x_2! ... x_k!} \prod_{i=1}^kp_i{x_i} \text{ with } n = \sum_i^kx_i \\
+    E[X_i] = np_i \\
+    Var(X_i) = np_i(1-p_i)
+</script></p>
+<h6 id="poisson-random-variable">Poisson random variable</h6>
+<p>The Poisson distribution is, in my opinion, among the more interesting distributions. It expresses the probability of a given number of events occurring in a fixed interval if these events occur with a known constant rate. This rate is denoted as <script type="math/tex; ">\lambda</script>. Note that the Poisson distribution is <em>memoryless</em>, which means the probability that an event occurs is independent of the time since the last event.</p>
+<p>One pretty neat perspective is to see the Poisson distribution as an approximation of the Binomial where <script type="math/tex; ">n</script> is large, <script type="math/tex; ">p</script> is small, and <script type="math/tex; ">\lambda = np</script>. For example, a Binomial random variable of 10000 trials with the success rate of 0.01 can be seen as a Poisson random variable of events happening every 10000 * 0.01 = 100 trials.</p>
+<p><script type="math/tex; mode=display">
+    X \sim \text{Poi}(\lambda) \\
+    P(X=i) = \frac{\lambda^i}{i!}e^{-\lambda} \\
+    E[X] = \lambda \\
+    Var(X) = \lambda \\
+</script></p>
+<p>Below is the PMF of the Poisson distribution with different values of <script type="math/tex; ">\lambda</script>, made by Skbkekas.</p>
+<center>
+    <img src="images/image21.png" width="70%" alt="PDF for Poisson distribution" title="image_tooltip">
+</center>
+
+
+<blockquote>
+<p><strong>Poisson vs binomial according to <a href="https://www.statisticshowto.datasciencecentral.com/poisson-distribution/" target="_blank">Data Science Central</a></strong>:</p>
+<p>If your question has an average probability of an event happening per unit (i.e. per unit of time, cycle, event) and you want to find the probability of a certain number of events happening in a period of time (or a number of events), then use the Poisson Distribution.</p>
+<p>If you are given an exact probability and you want to find the probability of the event happening a certain number of times out of x (i.e. 10 times out of 100, or 99 times out of 1000), use the Binomial Distribution formula.</p>
+</blockquote>
+<h6 id="geometric-random-variable">Geometric random variable</h6>
+<p>If each trial has the probability of success of p, then the geometric random variable represents the number of independent trials until the first success. One example is the number of candidates you have to interview until you hire someone.</p>
+<p><script type="math/tex; mode=display">
+    X \sim \text{Geo}(p) \\
+    P(X=n) =(1-p)^{n-1}p \\
+    E[X] = \frac{1}{p} \\
+    Var(X) = \frac{1-p}{p^2} \\
+</script></p>
+<p>Below is the PMF of the geometric distribution with different values of <script type="math/tex; ">p</script>, made by Skbkekas.</p>
+<center>
+    <img src="images/image22.png" width="70%" alt="PDF for Geometric distribution" title="image_tooltip">
+</center>
+
+<h6 id="beta-random-variable">Beta random variable</h6>
+<p>Beta is my favorite distribution (what do you mean you don&apos;t have a favorite distribution?). It&apos;s a random variable that estimates another random variable.</p>
+<p>Say, we have a coin with an unknown probability of turning heads. Let <script type="math/tex; ">p</script> represent this probability. After <script type="math/tex; ">n + m</script> flips, we get <script type="math/tex; ">n</script> heads and <script type="math/tex; ">m</script> tails. We might want to estimate that <script type="math/tex; ">p = \frac{n}{n+m}</script>. However, this is unreliable, especially if <script type="math/tex; ">n+m</script> is small. We&apos;d like to say something like this: <script type="math/tex; ">p</script> can also be more than, less than, or equal to <script type="math/tex; ">\frac{n}{n+m}</script>, the values further away from <script type="math/tex; ">\frac{n}{n+m}</script> having a smaller probability. And the higher the value of <script type="math/tex; ">n+m</script>, the higher the probability of <script type="math/tex; ">p</script> being <script type="math/tex; ">\frac{n}{n+m}</script>. The beta distribution allows you to do that.</p>
+<p>The beta random variable is represented using two variables: <script type="math/tex; ">\alpha</script> to represent the number of successes and <script type="math/tex; ">\beta</script> to represent the number of failures. The beta distribution can represent beyond coin flips. In fact, <script type="math/tex; ">\alpha</script> and <script type="math/tex; ">\beta</script> can rerepsent continuous value (though they can&apos;t be non-positive).</p>
+<p><script type="math/tex; mode=display">
+    x \sim \text{Beta}(\alpha, \beta) \text{ with } 0 < \alpha, \beta \\
+    f(x; \alpha, \beta) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1}  \text{ with }  0 \leq x \leq 1 
+</script></p>
+<p><script type="math/tex; ">\Gamma</script> is the Gamma function: <script type="math/tex; ">\Gamma(n) = (n-1)!</script>. The term <script type="math/tex; ">\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}</script> is the normalization constant so that the expression integrates to 1.</p>
+<p><script type="math/tex; mode=display">
+    E[X] = \frac{\alpha}{\alpha + \beta} \\
+    Var(X) = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}
+</script></p>
+<p>We can also incorporate a priori belief in the beta distribution. For example, if before even flipping the coin, we believe that the coin has a moderate chance of being biased towards heads, we can set the a priori to be <script type="math/tex; ">\text{Beta}(4, 2)</script>. Then after 10 coin flips of which 7 are heads and 3 are tails, we can update the distribution to be <script type="math/tex; ">\text{Beta}(4 + 7, 2 + 3) = \text{Beta}(11, 5)</script>. In fact, in Bayesian inference, the beta distribution is the conjugate prior probability distribution for Bernoulli, binomial, negative binomial, and geometric distributions.</p>
+<p>Below is the PDF of the geometric distribution with different parameters.</p>
+<center>
+    <img src="images/image23.png" width="70%" alt="PDF for Beta distribution" title="image_tooltip">
+</center>
+
+<p>The multivariate generalization of the beta random variable is called Dirichlet.</p>
+<h6 id="exponential-family-of-distributions">Exponential family of distributions</h6>
+<p>A class of distributions is in the exponential family if it can be written in the form:</p>
+<p><script type="math/tex; mode=display">
+    p(x; \eta) = h(x)\exp(B(\eta)T(x) - a(\eta))
+</script>
+where:</p>
+<ol>
+<li><script type="math/tex; ">\eta</script> is the parameter of the distribution, e.g. if it&apos;s the normal distribution then <script type="math/tex; ">\eta = (\mu, \sigma)</script>.</li>
+<li><script type="math/tex; ">T(x)</script> is the sufficient statistic. For most distributions, <script type="math/tex; ">T(x) = x</script>. For the beta distribution, <script type="math/tex; ">T(x) = (\log x, \log(1-x))</script>.</li>
+<li><script type="math/tex; ">a(\eta)</script> is the normalization constant so that the expression integrates to 1.</li>
+</ol>
+<p>The exponential family of distribution is important because it provides a general framework for working with many of the most common distributions, including the Bernoulli, binomial, Poisson, normal, and more.</p>
+<p>You can write the PMF and PDF of those distributions to match the form defined above. For example, given the Poisson random variable <script type="math/tex; ">\text{Poi}(\lambda)</script>, with <script type="math/tex; ">f(x) = \frac{\lambda^x}{x!}\exp(-\lambda)</script>, belongs to the exponential family because <script type="math/tex; ">f(x)</script> can be written in the form <script type="math/tex; ">h(x)\exp(B(\eta)T(x) - a(\eta))</script>.
+<script type="math/tex; mode=display">
+    f(x) = \frac{\lambda^x}{x!}\exp(-\lambda) = \frac{1}{x!}\exp(\log(\lambda)x - \lambda) \\
+    \eta = \lambda \\
+    h(x) = \frac{1}{x!} \\
+    B(\eta) = \log(\eta) \\
+    T(x) = x \\
+    a(\eta) = \lambda
+</script></p>
+<p>More examples that show that other distributions belong to the exponential family can be found <a href="https://www2.stat.duke.edu/courses/Spring11/sta114/lec/expofam.pdf" target="_blank">here</a> and <a href="http://cs229.stanford.edu/notes/cs229-notes1.pdf" target="_blank">here</a>.</p>
+<h6 id="marginal-distribution-joint-distribution-conditional-distribution">Marginal distribution, joint distribution, conditional distribution</h6>
+<p>A joint probability distribution gives the probability of two or more events happening at the same time. For example, given two discrete random variables <script type="math/tex; ">X</script> and <script type="math/tex; ">Y</script>, the joint probability distribution of <script type="math/tex; ">X</script> and <script type="math/tex; ">Y</script> gives the probability of <script type="math/tex; ">P(X=x, Y=y)</script> for any combination of value <script type="math/tex; ">x \in X</script> and value <script type="math/tex; ">y \in Y</script>.</p>
+<p>A marginal distribution gives the probabilities of various values of a subset of variables without reference to the values of the other variables. For example, given the joint distribution of <script type="math/tex; ">X</script> and <script type="math/tex; ">Y</script>, we want to have a marginal probability distribution of <script type="math/tex; ">X</script> without reference to <script type="math/tex; ">Y</script>. </p>
+<p><script type="math/tex; mode=display">
+    P(X=x) = \sum_yP(X=x, Y=y)
+</script></p>
+<p>A conditional probability distribution gives the probability of a subset of events occurring assuming that other events also occur. One example is <script type="math/tex; ">P(X|Y)</script>.</p>
+<hr>
+<p><em>This book was created by <a href="https://huyenchip.com" target="_blank">Chip Huyen</a> with the help of wonderful friends. For feedback, errata, and suggestions, the author can be reached <a href="https://huyenchip.com/communication/" target="_blank">here</a>.</em></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="5.2.1-probability.html" class="navigation navigation-prev " aria-label="Previous page: 5.2.1 Probability">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5.2.1.2-questions.html" class="navigation navigation-next " aria-label="Next page: 5.2.1.2 Questions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.2.1.1 Basic concepts to review","level":"1.3.1.3.1.1","depth":5,"next":{"title":"5.2.1.2 Questions","level":"1.3.1.3.1.2","depth":5,"path":"contents/5.2.1.2-questions.md","ref":"contents/5.2.1.2-questions.md","articles":[]},"previous":{"title":"5.2.1 Probability","level":"1.3.1.3.1","depth":4,"path":"contents/5.2.1-probability.md","ref":"contents/5.2.1-probability.md","articles":[{"title":"5.2.1.1 Basic concepts to review","level":"1.3.1.3.1.1","depth":5,"path":"contents/5.2.1.1-basic-concepts-to-review.md","ref":"contents/5.2.1.1-basic-concepts-to-review.md","articles":[]},{"title":"5.2.1.2 Questions","level":"1.3.1.3.1.2","depth":5,"path":"contents/5.2.1.2-questions.md","ref":"contents/5.2.1.2-questions.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6.1"},"ga":{"configuration":"auto","token":"UA-103070243-5"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"contents/5.2.1.1-basic-concepts-to-review.md","mtime":"2021-02-05T02:12:14.419Z","type":"markdown"},"gitbook":{"version":"3.6.16","time":"2021-02-05T02:14:28.477Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

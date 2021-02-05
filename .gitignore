@@ -1,0 +1,5 @@
+.ipynb_checkpoints/
+.DS_Store
+auto_page_creation.ipynb
+update.sh
+ga_tag*
