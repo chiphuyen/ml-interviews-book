@@ -1,0 +1,1845 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-103070243-5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-103070243-5');
+		</script>
+		<!-- End global site tag (gtag.js) - Google Analytics -->
+        <meta charset="UTF-8">
+        <title>A. For interviewers · MLIB</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.16">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="the-zen-of-interviews.html" />
+    
+    
+    <link rel="prev" href="appendix.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction to Machine Learning Interviews Book
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="0-target-audience.html">
+            
+                <a href="0-target-audience.html">
+            
+                    
+                    Target audience
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="0-about-the-questions.html">
+            
+                <a href="0-about-the-questions.html">
+            
+                    
+                    About the questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="0-about-the-answers.html">
+            
+                <a href="0-about-the-answers.html">
+            
+                    
+                    About the answers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="0-gaming-the-interview-process.html">
+            
+                <a href="0-gaming-the-interview-process.html">
+            
+                    
+                    Gaming the interview process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="0-acknowledgments.html">
+            
+                <a href="0-acknowledgments.html">
+            
+                    
+                    Acknowledgments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="0-about-the-author.html">
+            
+                <a href="0-about-the-author.html">
+            
+                    
+                    About the author
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="part-i.-overview.html">
+            
+                <a href="part-i.-overview.html">
+            
+                    
+                    Part I. Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="chapter-1.-ml-jobs.html">
+            
+                <a href="chapter-1.-ml-jobs.html">
+            
+                    
+                    Chapter 1. Machine learning jobs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="1.1-different-ml-roles.html">
+            
+                <a href="1.1-different-ml-roles.html">
+            
+                    
+                    1.1 Different machine learning roles
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="1.1.1-working-in-research-vs.-workingin-production.html">
+            
+                <a href="1.1.1-working-in-research-vs.-workingin-production.html">
+            
+                    
+                    1.1.1 Working in research vs. working in production
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="1.1.2-research.html">
+            
+                <a href="1.1.2-research.html">
+            
+                    
+                    1.1.2 Research
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.2.1" data-path="1.1.2.1-research-vs.-applied-research.html">
+            
+                <a href="1.1.2.1-research-vs.-applied-research.html">
+            
+                    
+                    1.1.2.1 Research vs. applied research
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2.2" data-path="1.1.2.2-research-scientist-vs.-research-engineer.html">
+            
+                <a href="1.1.2.2-research-scientist-vs.-research-engineer.html">
+            
+                    
+                    1.1.2.2 Research scientist vs. research engineer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="1.1.3-production.html">
+            
+                <a href="1.1.3-production.html">
+            
+                    
+                    1.1.3 Production
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.3.1" data-path="1.1.3.1-production-cycle.html">
+            
+                <a href="1.1.3.1-production-cycle.html">
+            
+                    
+                    1.1.3.1 Production cycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3.2" data-path="1.1.3.2-machine-learning-engineer-vs.-software-engineer.html">
+            
+                <a href="1.1.3.2-machine-learning-engineer-vs.-software-engineer.html">
+            
+                    
+                    1.1.3.2 Machine learning engineer vs. software engineer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3.3" data-path="1.1.3.3-machine-learning-engineer-vs.-data-scientist.html">
+            
+                <a href="1.1.3.3-machine-learning-engineer-vs.-data-scientist.html">
+            
+                    
+                    1.1.3.3 Machine learning engineer vs. data scientist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3.4" data-path="1.1.3.4-other-technical-roles-in-ml-production.html">
+            
+                <a href="1.1.3.4-other-technical-roles-in-ml-production.html">
+            
+                    
+                    1.1.3.4 Other technical roles in ML production
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3.5" data-path="1.1.3.5-understanding-roles-and-titles.html">
+            
+                <a href="1.1.3.5-understanding-roles-and-titles.html">
+            
+                    
+                    1.1.3.5 Understanding roles and titles
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="1.2-types-of-companies.html">
+            
+                <a href="1.2-types-of-companies.html">
+            
+                    
+                    1.2 Types of companies
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="1.2.1-applications-companies-vs.-tooling-companies.html">
+            
+                <a href="1.2.1-applications-companies-vs.-tooling-companies.html">
+            
+                    
+                    1.2.1 Applications companies vs. tooling companies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="1.2.2-enterprise-vs.-consumer-products.html">
+            
+                <a href="1.2.2-enterprise-vs.-consumer-products.html">
+            
+                    
+                    1.2.2 Enterprise vs. consumer products
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.3" data-path="1.2.3-startups-or-big-companies.html">
+            
+                <a href="1.2.3-startups-or-big-companies.html">
+            
+                    
+                    1.2.3 Startups or big companies
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="chapter-2.-machine-learning-interview-process.html">
+            
+                <a href="chapter-2.-machine-learning-interview-process.html">
+            
+                    
+                    Chapter 2. Machine learning interview process
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="2.1-understanding-the-interviewers’-mindset.html">
+            
+                <a href="2.1-understanding-the-interviewers’-mindset.html">
+            
+                    
+                    2.1 Understanding the interviewers’ mindset
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="2.1.1-what-companies-want-from-candidates.html">
+            
+                <a href="2.1.1-what-companies-want-from-candidates.html">
+            
+                    
+                    2.1.1 What companies want from candidates
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1.1" data-path="2.1.1.1-technical-skills.html">
+            
+                <a href="2.1.1.1-technical-skills.html">
+            
+                    
+                    2.1.1.1 Technical skills
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.1.2" data-path="2.1.1.2-non-technical-skills.html">
+            
+                <a href="2.1.1.2-non-technical-skills.html">
+            
+                    
+                    2.1.1.2 Non-technical skills
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.1.3" data-path="2.1.1.3-what-exactly-is-culture-fit.html">
+            
+                <a href="2.1.1.3-what-exactly-is-culture-fit.html">
+            
+                    
+                    2.1.1.3 What exactly is culture fit?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.1.4" data-path="2.1.1.4-junior-vs-senior-roles.html">
+            
+                <a href="2.1.1.4-junior-vs-senior-roles.html">
+            
+                    
+                    2.1.1.4 Junior vs senior roles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.1.5" data-path="2.1.1.5-do-i-need-a-ph.d.-to-work-in-machine-learning.html">
+            
+                <a href="2.1.1.5-do-i-need-a-ph.d.-to-work-in-machine-learning.html">
+            
+                    
+                    2.1.1.5 Do I need a Ph.D. to work in machine learning?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2" data-path="2.1.2-how-companies-source-candidates.html">
+            
+                <a href="2.1.2-how-companies-source-candidates.html">
+            
+                    
+                    2.1.2 How companies source candidates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.3" data-path="2.1.3-what-signals-companies-look-for-in-candidates.html">
+            
+                <a href="2.1.3-what-signals-companies-look-for-in-candidates.html">
+            
+                    
+                    2.1.3 What signals companies look for in candidates
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="2.2-interview-pipeline.html">
+            
+                <a href="2.2-interview-pipeline.html">
+            
+                    
+                    2.2 Interview pipeline
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.1" data-path="2.2.1-common-interview-formats.html">
+            
+                <a href="2.2.1-common-interview-formats.html">
+            
+                    
+                    2.2.1 Common interview formats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2" data-path="2.2.2-alternative-interview-formats.html">
+            
+                <a href="2.2.2-alternative-interview-formats.html">
+            
+                    
+                    2.2.2 Alternative interview formats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3" data-path="2.2.3-interviews-at-big-companies-vs.-at-small-companies.html">
+            
+                <a href="2.2.3-interviews-at-big-companies-vs.-at-small-companies.html">
+            
+                    
+                    2.2.3 Interviews at big companies vs. at small companies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.4" data-path="2.2.4-interviews-for-internships-vs.-for-full-time-positions.html">
+            
+                <a href="2.2.4-interviews-for-internships-vs.-for-full-time-positions.html">
+            
+                    
+                    2.2.4 Interviews for internships vs. for full-time positions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="2.3-types-of-questions.html">
+            
+                <a href="2.3-types-of-questions.html">
+            
+                    
+                    2.3 Types of questions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.3.1" data-path="2.3.1-behavioral-questions.html">
+            
+                <a href="2.3.1-behavioral-questions.html">
+            
+                    
+                    2.3.1 Behavioral questions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.3.1.1" data-path="2.3.1.1-background-and-resume.html">
+            
+                <a href="2.3.1.1-background-and-resume.html">
+            
+                    
+                    2.3.1.1 Background and resume
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.1.2" data-path="2.3.1.2-interests.html">
+            
+                <a href="2.3.1.2-interests.html">
+            
+                    
+                    2.3.1.2 Interests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.1.3" data-path="2.3.1.3-communication.html">
+            
+                <a href="2.3.1.3-communication.html">
+            
+                    
+                    2.3.1.3 Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.1.4" data-path="2.3.1.4-personality.html">
+            
+                <a href="2.3.1.4-personality.html">
+            
+                    
+                    2.3.1.4 Personality
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.2" data-path="2.3.2-questions-to-ask-your-interviewers.html">
+            
+                <a href="2.3.2-questions-to-ask-your-interviewers.html">
+            
+                    
+                    2.3.2 Questions to ask your interviewers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3.3" data-path="2.3.3-bad-interview-questions.html">
+            
+                <a href="2.3.3-bad-interview-questions.html">
+            
+                    
+                    2.3.3 Bad interview questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="2.4-red-flags.html">
+            
+                <a href="2.4-red-flags.html">
+            
+                    
+                    2.4 Red flags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="2.5-timeline.html">
+            
+                <a href="2.5-timeline.html">
+            
+                    
+                    2.5 Timeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="2.6-understanding-your-odds.html">
+            
+                <a href="2.6-understanding-your-odds.html">
+            
+                    
+                    2.6 Understanding your odds
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="chapter-3.-after-an-offer.html">
+            
+                <a href="chapter-3.-after-an-offer.html">
+            
+                    
+                    Chapter 3. After an offer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="3.1-compensation-package.html">
+            
+                <a href="3.1-compensation-package.html">
+            
+                    
+                    3.1 Compensation package
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="3.1.1-base-salary.html">
+            
+                <a href="3.1.1-base-salary.html">
+            
+                    
+                    3.1.1 Base salary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="3.1.2-equity-grants.html">
+            
+                <a href="3.1.2-equity-grants.html">
+            
+                    
+                    3.1.2 Equity grants
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="3.1.3-bonuses.html">
+            
+                <a href="3.1.3-bonuses.html">
+            
+                    
+                    3.1.3 Bonuses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.4" data-path="3.1.4-compensation-packages-at-different-levels.html">
+            
+                <a href="3.1.4-compensation-packages-at-different-levels.html">
+            
+                    
+                    3.1.4 Compensation packages at different levels
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="3.2-negotiation.html">
+            
+                <a href="3.2-negotiation.html">
+            
+                    
+                    3.2 Negotiation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="3.2.1-compensation-expectations.html">
+            
+                <a href="3.2.1-compensation-expectations.html">
+            
+                    
+                    3.2.1 Compensation expectations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="3.3-career-progression.html">
+            
+                <a href="3.3-career-progression.html">
+            
+                    
+                    3.3 Career progression
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="chapter-4.-where-to-start.html">
+            
+                <a href="chapter-4.-where-to-start.html">
+            
+                    
+                    Chapter 4. Where to start
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="4.1-how-long-do-i-need-for-my-job-search.html">
+            
+                <a href="4.1-how-long-do-i-need-for-my-job-search.html">
+            
+                    
+                    4.1 How long do I need for my job search?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="4.2-how-other-people-did-it.html">
+            
+                <a href="4.2-how-other-people-did-it.html">
+            
+                    
+                    4.2 How other people did it
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="4.3-resources.html">
+            
+                <a href="4.3-resources.html">
+            
+                    
+                    4.3 Resources
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.3.1" data-path="4.3.1-courses.html">
+            
+                <a href="4.3.1-courses.html">
+            
+                    
+                    4.3.1 Courses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3.2" data-path="4.3.2-books-&-articles.html">
+            
+                <a href="4.3.2-books-&-articles.html">
+            
+                    
+                    4.3.2 Books & articles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3.3" data-path="4.3.3-other-resources.html">
+            
+                <a href="4.3.3-other-resources.html">
+            
+                    
+                    4.3.3 Other resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="4.4-do’s-and-don’ts-for-ml-interviews.html">
+            
+                <a href="4.4-do’s-and-don’ts-for-ml-interviews.html">
+            
+                    
+                    4.4 Do’s and don’ts for ML interviews
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.4.1" data-path="4.4.1-do’s.html">
+            
+                <a href="4.4.1-do’s.html">
+            
+                    
+                    4.4.1 Do’s
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4.2" data-path="4.4.2-don’ts.html">
+            
+                <a href="4.4.2-don’ts.html">
+            
+                    
+                    4.4.2 Don’ts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="part-ii.-questions.html">
+            
+                <a href="part-ii.-questions.html">
+            
+                    
+                    Part II: Questions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="chapter-5.-math.html">
+            
+                <a href="chapter-5.-math.html">
+            
+                    
+                    Chapter 5. Math
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="notation.html">
+            
+                <a href="notation.html">
+            
+                    
+                    Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="5.1-algebra-and-calculus.html">
+            
+                <a href="5.1-algebra-and-calculus.html">
+            
+                    
+                    5.1 Algebra and (little) calculus
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1" data-path="5.1.1-vectors.html">
+            
+                <a href="5.1.1-vectors.html">
+            
+                    
+                    5.1.1 Vectors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2" data-path="5.1.2-matrices.html">
+            
+                <a href="5.1.2-matrices.html">
+            
+                    
+                    5.1.2 Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.3" data-path="5.1.3-dimensionality-reduction.html">
+            
+                <a href="5.1.3-dimensionality-reduction.html">
+            
+                    
+                    5.1.3 Dimensionality reduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.4" data-path="5.1.4-calculus-and-convex-optimization.html">
+            
+                <a href="5.1.4-calculus-and-convex-optimization.html">
+            
+                    
+                    5.1.4 Calculus and convex optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="5.2-probability-and-statistics.html">
+            
+                <a href="5.2-probability-and-statistics.html">
+            
+                    
+                    5.2 Probability and statistics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.3.1" data-path="5.2.1-probability.html">
+            
+                <a href="5.2.1-probability.html">
+            
+                    
+                    5.2.1 Probability
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.3.1.1" data-path="5.2.1.1-basic-concepts-to-review.html">
+            
+                <a href="5.2.1.1-basic-concepts-to-review.html">
+            
+                    
+                    5.2.1.1 Basic concepts to review
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3.1.2" data-path="5.2.1.2-questions.html">
+            
+                <a href="5.2.1.2-questions.html">
+            
+                    
+                    5.2.1.2 Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3.2" data-path="5.2.2-stats.html">
+            
+                <a href="5.2.2-stats.html">
+            
+                    
+                    5.2.2 Stats
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="chapter-6.-computer-science.html">
+            
+                <a href="chapter-6.-computer-science.html">
+            
+                    
+                    Chapter 6. Computer Science
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="6.1-algorithms.html">
+            
+                <a href="6.1-algorithms.html">
+            
+                    
+                    6.1 Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="6.2-complexity-and-numerical-analysis.html">
+            
+                <a href="6.2-complexity-and-numerical-analysis.html">
+            
+                    
+                    6.2 Complexity and numerical analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="6.3-data.html">
+            
+                <a href="6.3-data.html">
+            
+                    
+                    6.3 Data
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.3.1" data-path="6.3.1-data-structures.html">
+            
+                <a href="6.3.1-data-structures.html">
+            
+                    
+                    6.3.1 Data structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="chapter-7.-machine-learning-workflows.html">
+            
+                <a href="chapter-7.-machine-learning-workflows.html">
+            
+                    
+                    Chapter 7. Machine learning workflows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="7.1-basics.html">
+            
+                <a href="7.1-basics.html">
+            
+                    
+                    7.1 Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="7.2-sampling-and-creating-training-data.html">
+            
+                <a href="7.2-sampling-and-creating-training-data.html">
+            
+                    
+                    7.2 Sampling and creating training data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="7.3-objective-functions,-metrics,-and-evaluation.html">
+            
+                <a href="7.3-objective-functions,-metrics,-and-evaluation.html">
+            
+                    
+                    7.3 Objective functions, metrics, and evaluation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="chapter-8.-machine-learning-algorithms.html">
+            
+                <a href="chapter-8.-machine-learning-algorithms.html">
+            
+                    
+                    Chapter 8. Machine learning algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="8.1-classical-machine-learning.html">
+            
+                <a href="8.1-classical-machine-learning.html">
+            
+                    
+                    8.1 Classical machine learning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1.1" data-path="8.1.1-overview:-basic-algorithm.html">
+            
+                <a href="8.1.1-overview:-basic-algorithm.html">
+            
+                    
+                    8.1.1 Overview: Basic algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.2" data-path="8.1.2-questions.html">
+            
+                <a href="8.1.2-questions.html">
+            
+                    
+                    8.1.2 Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="8.2-deep-learning-architectures-and-applications.html">
+            
+                <a href="8.2-deep-learning-architectures-and-applications.html">
+            
+                    
+                    8.2 Deep learning architectures and applications
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.2.1" data-path="8.2.1-natural-language-processing.html">
+            
+                <a href="8.2.1-natural-language-processing.html">
+            
+                    
+                    8.2.1 Natural language processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.2" data-path="8.2.2-computer-vision.html">
+            
+                <a href="8.2.2-computer-vision.html">
+            
+                    
+                    8.2.2 Computer vision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.3" data-path="8.2.3-reinforcement-learning.html">
+            
+                <a href="8.2.3-reinforcement-learning.html">
+            
+                    
+                    8.2.3 Reinforcement learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.4" data-path="8.2.4-other.html">
+            
+                <a href="8.2.4-other.html">
+            
+                    
+                    8.2.4 Other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="8.3-training-neural-networks.html">
+            
+                <a href="8.3-training-neural-networks.html">
+            
+                    
+                    8.3 Training neural networks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="appendix.html">
+            
+                <a href="appendix.html">
+            
+                    
+                    Appendix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="a.-for-interviewers.html">
+            
+                <a href="a.-for-interviewers.html">
+            
+                    
+                    A. For interviewers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="the-zen-of-interviews.html">
+            
+                <a href="the-zen-of-interviews.html">
+            
+                    
+                    The zen of interviews
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="b.-building-your-network.html">
+            
+                <a href="b.-building-your-network.html">
+            
+                    
+                    B. Building your network
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >A. For interviewers</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="a-for-interviewers">A. For interviewers</h2>
+<p>Candidates are frustrated with the hiring process -- it&apos;s beyond their control. But hiring managers also seem frustrated with their own processes because they can’t or don’t know how to change them. Every hiring manager I’ve talked to expressed interest in reading this book to learn from other companies. I don&apos;t hope to change a system with one book. I just hope it provides a scaffold on which we can start the conversation and establish good interviewing practices.</p>
+<p>Hiring for ML roles is competitive. Strong candidates always have options, but strong candidates in ML have a lot more options. A hiring process with the candidates’ experience in mind will give candidates a better impression of your company, making them more likely to accept your offer. A better process can help you attract more suitable candidates, make better hires, which saves you time down the line. Even if it’s a no-hire, you still want to win their allegiance. You might want to reinterview them in the future, they might recommend you to their network, and they can become advocates for your products.</p>
+<p>ML interviews are still a black box. For a field so obsessed with qualitative methodologies, it’s surprising that there has been so little qualitative research done on the hiring process for ML roles. Few companies can state with any certainty the correlation between their interview techniques and the quality of hires. Some of the challenges include:</p>
+<ol>
+<li>People who interview aren&apos;t the same people who evaluate performance on the job.</li>
+<li>No established metrics for interview outcomes and performance outcomes, or the correlation between them<sup><a href="#fn_57" id="reffn_57">57</a></sup>.</li>
+<li>No control group. Companies don’t hire people who fail their interviews to compare their job performances to the performances of those who pass.</li>
+</ol>
+<p>A low hanging fruit is testing your pipeline on existing people within your organization. See how they like the process and whether their performances on the interviews correlate with their performances on the jobs. Another is actively soliciting feedback from candidates. Instead of sending out survey links that nobody clicks on, after each onsite, have someone not involved in the hiring process spend 15 minutes talking to the candidate. Make sure the candidate knows that their feedback won’t affect the hiring decision in any way.</p>
+<p>If you don’t have a training program for interviewers already, please set up one. Interviewers are both gatekeepers and faces of your organization. Letting new hires shadow for a few interviews isn’t enough. New hires have no idea what they are doing, and companies have no way of standardizing feedback across teams, interviewers, and candidates.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="appendix.html" class="navigation navigation-prev " aria-label="Previous page: Appendix">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="the-zen-of-interviews.html" class="navigation navigation-next " aria-label="Next page: The zen of interviews">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"A. For interviewers","level":"1.4.1","depth":2,"next":{"title":"The zen of interviews","level":"1.4.1.1","depth":3,"path":"contents/the-zen-of-interviews.md","ref":"contents/the-zen-of-interviews.md","articles":[]},"previous":{"title":"Appendix","level":"1.4","depth":1,"path":"contents/appendix.md","ref":"contents/appendix.md","articles":[{"title":"A. For interviewers","level":"1.4.1","depth":2,"path":"contents/a.-for-interviewers.md","ref":"contents/a.-for-interviewers.md","articles":[{"title":"The zen of interviews","level":"1.4.1.1","depth":3,"path":"contents/the-zen-of-interviews.md","ref":"contents/the-zen-of-interviews.md","articles":[]}]},{"title":"B. Building your network","level":"1.4.2","depth":2,"path":"contents/b.-building-your-network.md","ref":"contents/b.-building-your-network.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6.1"},"ga":{"configuration":"auto","token":"UA-103070243-5"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"contents/a.-for-interviewers.md","mtime":"2021-02-05T02:12:14.433Z","type":"markdown"},"gitbook":{"version":"3.6.16","time":"2021-02-05T02:14:28.477Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

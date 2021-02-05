@@ -1,0 +1,3 @@
+## Chapter 7. Machine learning workflows
+
+Even though deep learning seems to be all that people in the research community is talking about, most real-world problems are still being solved by classical machine learning algorithms including k-nearest neighbor and XGBoost. In this chapter, we will cover fundamentals that are essential for understanding machine learning algorithms, as well as non-deep learning algorithms that you might find useful in both your day-to-day jobs and interviews.

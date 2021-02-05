@@ -1,0 +1,24 @@
+{
+  "name": "ml-interviews-book",
+  "description": "A book on ML interviews",
+  "version": "0.0.1",
+  "maintainers": [
+    {
+      "name": "Chip Huyen"
+    }
+  ],
+  "dependencies": {
+    "gitbook-plugin-ga": "^2.0.0",
+    "gitbook-plugin-mathjax": "git+https://github.com/algorithm-archivists/plugin-mathjax.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chiphuyen/ml-interviews-book"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "honkit build",
+    "serve": "honkit serve"
+  },
+  "homepage": "https://huyenchip.com/ml-interviews-book/"
+}

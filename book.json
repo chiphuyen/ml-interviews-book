@@ -1,0 +1,13 @@
+{
+    "honkit": ">= 3.0.0",
+  	"root": "./",
+    "plugins": ["mathjax@https://github.com/algorithm-archivists/plugin-mathjax", "ga"],
+    "pluginsConfig": {
+        "mathjax": {
+        	"version": "2.6.1"
+        },
+        "ga": {
+            "token": "UA-103070243-5"
+        }
+    }
+}
