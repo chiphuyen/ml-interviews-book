@@ -24,3 +24,5 @@ This book is not a replacement to machine learning textbooks nor a shortcut to g
 
 ---
 *This book was created by [Chip Huyen](https://huyenchip.com) with the help of wonderful friends. For feedback, errata, and suggestions, the author can be reached [here](https://huyenchip.com/communication/). Copyright ©2021 Chip Huyen.*
+
+end of the line
