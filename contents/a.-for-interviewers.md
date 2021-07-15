@@ -4,7 +4,7 @@ Candidates are frustrated with the hiring process -- it's beyond their control. 
 
 Hiring for ML roles is competitive. Strong candidates always have options, but strong candidates in ML have a lot more options. A hiring process with the candidates’ experience in mind will give candidates a better impression of your company, making them more likely to accept your offer. A better process can help you attract more suitable candidates, make better hires, which saves you time down the line. Even if it’s a no-hire, you still want to win their allegiance. You might want to reinterview them in the future, they might recommend you to their network, and they can become advocates for your products.
 
-ML interviews are still a black box. For a field so obsessed with qualitative methodologies, it’s surprising that there has been so little qualitative research done on the hiring process for ML roles. Few companies can state with any certainty the correlation between their interview techniques and the quality of hires. Some of the challenges include:
+ML interviews are still a black box. For a field so obsessed with quantitative methodologies, it’s surprising that there has been so little quantitative research done on the hiring process for ML roles. Few companies can state with any certainty the correlation between their interview techniques and the quality of hires. Some of the challenges include:
 
 
 1. People who interview aren't the same people who evaluate performance on the job.
