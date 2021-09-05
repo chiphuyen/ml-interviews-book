@@ -2,8 +2,18 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-103070243-5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-103070243-5');
+		</script>
+		<!-- End global site tag (gtag.js) - Google Analytics -->
         <meta charset="UTF-8">
-        <title>7.2 Sampling and creating training data · HonKit</title>
+        <title>7.2 Sampling and creating training data · MLIB</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.6.16">
@@ -1728,17 +1738,18 @@
 <li>Class imbalance.<ol>
 <li>[E] How would class imbalance affect your model?</li>
 <li>[E] Why is it hard for ML models to perform well on data with class imbalance?</li>
-<li>[M] What do you do when your training data has class imbalance?</li>
-<li>[M] Imagine you’re training a model to classify skin legion. Only 1 ...</li>
+<li>[M] Imagine you want to build a model to detect skin legions from images. In your training dataset, only 1% of your images shows signs of legions. After training, your model seems to make a lot more false negatives than false positives. What are some of the techniques you&apos;d use to improve your model?</li>
 </ol>
 </li>
-<li>Training data leakage.<ol>
-<li>[M] Why would oversampling before splitting can cause data leakage?</li>
-<li>[M] You want to build a model to classify whether a comment is </li>
+<li><p>Training data leakage.</p>
+<ol>
+<li>[M] Imagine you&apos;re working with a binary task where the positive class accounts for only 1% of your data. You decide to oversample the rare class then split your data into train and test splits. Your model performs well on the test split but poorly in production. What might have happened?</li>
+<li>[M] You want to build a model to classify whether a comment is spam or not spam. You have a dataset of a million comments over the period of 7 days. You decide to randomly split all your data into the train and test splits. Your co-worker points out that this can lead to data leakage. How?</li>
 </ol>
+<p><strong>Hint</strong>: You might want to clarify what oversampling here means. Oversampling can be as simple as dupplicating samples from the rare class.</p>
 </li>
 <li><p>[M] How does data sparsity affect your models?</p>
-<p><strong>Hint</strong>: sparse data is different from missing data.</p>
+<p><strong>Hint</strong>: Sparse data is different from missing data.</p>
 </li>
 <li><p>Feature leakage</p>
 <ol>
