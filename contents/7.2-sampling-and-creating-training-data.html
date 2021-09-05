@@ -1738,17 +1738,18 @@
 <li>Class imbalance.<ol>
 <li>[E] How would class imbalance affect your model?</li>
 <li>[E] Why is it hard for ML models to perform well on data with class imbalance?</li>
-<li>[M] What do you do when your training data has class imbalance?</li>
-<li>[M] Imagine you’re training a model to classify skin legion. Only 1 ...</li>
+<li>[M] Imagine you want to build a model to detect skin legions from images. In your training dataset, only 1% of your images shows signs of legions. After training, your model seems to make a lot more false negatives than false positives. What are some of the techniques you&apos;d use to improve your model?</li>
 </ol>
 </li>
-<li>Training data leakage.<ol>
-<li>[M] Why would oversampling before splitting can cause data leakage?</li>
-<li>[M] You want to build a model to classify whether a comment is </li>
+<li><p>Training data leakage.</p>
+<ol>
+<li>[M] Imagine you&apos;re working with a binary task where the positive class accounts for only 1% of your data. You decide to oversample the rare class then split your data into train and test splits. Your model performs well on the test split but poorly in production. What might have happened?</li>
+<li>[M] You want to build a model to classify whether a comment is spam or not spam. You have a dataset of a million comments over the period of 7 days. You decide to randomly split all your data into the train and test splits. Your co-worker points out that this can lead to data leakage. How?</li>
 </ol>
+<p><strong>Hint</strong>: You might want to clarify what oversampling here means. Oversampling can be as simple as dupplicating samples from the rare class.</p>
 </li>
 <li><p>[M] How does data sparsity affect your models?</p>
-<p><strong>Hint</strong>: sparse data is different from missing data.</p>
+<p><strong>Hint</strong>: Sparse data is different from missing data.</p>
 </li>
 <li><p>Feature leakage</p>
 <ol>
@@ -1808,7 +1809,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7.2 Sampling and creating training data","level":"1.3.3.2","depth":3,"next":{"title":"7.3 Objective functions, metrics, and evaluation","level":"1.3.3.3","depth":3,"path":"contents/7.3-objective-functions,-metrics,-and-evaluation.md","ref":"contents/7.3-objective-functions,-metrics,-and-evaluation.md","articles":[]},"previous":{"title":"7.1 Basics","level":"1.3.3.1","depth":3,"path":"contents/7.1-basics.md","ref":"contents/7.1-basics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6.1"},"ga":{"configuration":"auto","token":"UA-103070243-5"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"contents/7.2-sampling-and-creating-training-data.md","mtime":"2021-02-05T13:08:07.479Z","type":"markdown"},"gitbook":{"version":"3.6.16","time":"2021-02-05T13:12:02.074Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.2 Sampling and creating training data","level":"1.3.3.2","depth":3,"next":{"title":"7.3 Objective functions, metrics, and evaluation","level":"1.3.3.3","depth":3,"path":"contents/7.3-objective-functions,-metrics,-and-evaluation.md","ref":"contents/7.3-objective-functions,-metrics,-and-evaluation.md","articles":[]},"previous":{"title":"7.1 Basics","level":"1.3.3.1","depth":3,"path":"contents/7.1-basics.md","ref":"contents/7.1-basics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","ga","livereload"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6.1"},"ga":{"configuration":"auto","token":"UA-103070243-5"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"contents/7.2-sampling-and-creating-training-data.md","mtime":"2021-09-05T19:34:52.385Z","type":"markdown"},"gitbook":{"version":"3.6.16","time":"2021-09-05T19:38:55.163Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1871,6 +1872,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
