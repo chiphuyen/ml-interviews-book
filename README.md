@@ -2,7 +2,7 @@
 
 You can read the web-friendly version of the book [here](https://huyenchip.com/ml-interviews-book/). You can find the source code on [GitHub](https://github.com/chiphuyen/ml-interviews-book). The Discord to discuss the answers to the questions in the book is [here](https://discord.gg/XjDNDSEYjh).
 
-As a candidate, I’ve interviewed at a dozen big companies and startups. I’ve got offers for machine learning roles at companies including Google, NVIDIA, Snap, Netflix, Primer AI, and Snorkel AI. I’ve also been rejected at many other companies.
+As a candidate, I’ve been interviewed at a dozen big companies and startups. I’ve got offers for machine learning roles at companies including Google, NVIDIA, Snap, Netflix, Primer AI, and Snorkel AI. I’ve also been rejected at many other companies.
 
 As an interviewer, I’ve been involved in designing and executing the hiring process at NVIDIA and Snorkel AI, having taken steps from cold emailing candidates whose work I love, screening resumes, doing exploratory and technical interviews, debating whether or not to hire a candidate, to trying to convince candidates to choose us over competitive offers.
 
