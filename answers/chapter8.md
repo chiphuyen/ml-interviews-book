@@ -14,4 +14,19 @@
 
     Language models are trained on sequences of words to learn the probability of words occurring. In other words, they are estimating the PDF of word sequences and can therefore be interpreted as density estimators.
 3. [M] Language models are often referred to as unsupervised learning, but some say its mechanism isn’t that different from supervised learning. What are your thoughts?
-    Language models are trained on vast amounts of text without any explicit labels. In that regard they are unsupervised. But in order for the model to learn the intricacies of the language, the relationship between different words it is usually trained in an auto-regressive manner, i.e. a set of words are masked and the model is trained to predict the masked words. These masked words can be thought of as labels which is similar to supervised learning. 
+    Language models are trained on vast amounts of text without any explicit labels. In that regard they are unsupervised. But in order for the model to learn the intricacies of the language, the relationship between different words it is usually trained in an auto-regressive manner, i.e. a set of words are masked and the model is trained to predict the masked words. These masked words can be thought of as labels which is similar to supervised learning.
+4. Word embeddings.
+    
+    1. [M] Why do we need word embeddings?
+    
+    Word embeddings are a way to map words to vector representations that can be used in matrix multiplication in neural networks. These representations preserve the semantics and are lower in dimension than one-hot encoded vectors.
+    
+    2. [M] What’s the difference between count-based and prediction-based word embeddings?
+    
+    Count-based embeddings learn the embeddings based on the co-occurrences of words across a large dataset. GloVe is a count-based embedding method. Prediction-based word embeddings learns the embeddings by learning to predict a word of set of words based on the surrounding words and minimising the prediction loss
+    
+    3. [H] Most word embedding algorithms are based on the assumption that words that appear in similar contexts have similar meanings. What are some of the problems with context-based word embeddings?
+    
+    Context-based embeddings reinforce gender and racial biases present in the training data. For example the embedding of the word smart or beautiful should not have any gender preferences baked into it but if you ask a LM to describe someone smart or translate a sentence describing someone smart from a gender-neutral language to English for instance, it will prefer the pronoun he for smart and she for beautiful because in the context of other words in the training data smart is more associated with males and beauty with females. 
+    
+    Another issue can be that words with different meaning will have different embeddings which make it difficult for them to be used standalone.
