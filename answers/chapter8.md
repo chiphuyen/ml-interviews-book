@@ -140,18 +140,21 @@
     1. [E] What’s linear separation? Why is it desirable when we use SVM?
     Linear separation is the ability of a classifier to separate the data points of different classes using a linear boundary. It is desirable when using Support Vector Machines (SVMs) because it allows the classifier to be represented by a simple hyperplane, which makes the optimization problem for finding the best hyperplane computationally efficient. 
     1. [M] How well would vanilla SVM work on this dataset?
+        It will draw a line between the two classes with the maximum margin
 
       <center>
         <img src="images/image31.png" width="30%" alt="Adjacency matrix" title="image_tooltip"><br>
       </center>
 
     1. [M] How well would vanilla SVM work on this dataset?
+        It will draw a line in between the furthest diamond and circle of the clusters leaving little margin in between the classes
 
       <center>
         <img src="images/image32.png" width="30%" alt="Adjacency matrix" title="image_tooltip"><br>
       </center>
 
     1. [M] How well would vanilla SVM work on this dataset?
+        It will not be able to separate the two classes.
       <center>
         <img src="images/image33.png" width="27%" alt="Adjacency matrix" title="image_tooltip"><br>
       </center>
