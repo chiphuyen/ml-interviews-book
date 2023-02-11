@@ -1,3 +1,161 @@
+#### 8.1.2 Questions
+
+1. [E] What are the basic assumptions to be made for linear regression?
+    1. Linearity: there is a linear relationship between the inputs and outputs
+    2. Independence: the observations are independent of each other and the input variables (features) are not correlated
+    3. Homoscedasticity: the spread of the residuals is the same for all variables, i.e. the variance of the error is constant across all independent variables
+    4. Normality: the residuals should be normally distributed
+2. [E] What happens if we don’t apply feature scaling to logistic regression?
+    Without feature scaling, the optimization algorithm will converge much slower as the scale of the features will have a large impact on the optimization process.
+    The reason behind this is that the optimization algorithm calculates the gradient of the cost function with respect to the parameters, and the step size of the update is determined by the learning rate. If the features have vastly different scales, the update step size will be much larger for the features with larger scales and much smaller for the features with smaller scales. This will make the optimization process very slow, as it will oscillate between large and small steps, and it will take a lot of iterations to converge.
+3. [E] What are the algorithms you’d use when developing the prototype of a fraud detection model?
+    To detect fraud (anomolies) some useful algorithms are decision trees, random forest, KNNs, auto-encoders
+4. Feature selection.
+    1. [E] Why do we use feature selection?
+    Some features are more informative than others and removing the less important features has a number of benefits:
+        1. Improved performance
+        2. Easier to interpret the model with fewer dimesions
+        3. Less prone to overfitting
+    2. [M] What are some of the algorithms for feature selection? Pros and cons of each.
+        1. Filter methods: These methods use a statistical test to evaluate the relevance of each feature with respect to the target variable. Features are then ranked based on their score and the top-ranking features are selected. Examples of filter methods include chi-squared, mutual information, and ANOVA. Pros: easy to implement and fast to run. Cons: can be sensitive to the choice of statistical test and may not take into account the relationships between features.
+        2. Wrapper methods: These methods use a machine learning model to evaluate the performance of different subsets of features. Features are then selected based on their contribution to the performance of the model. Examples of wrapper methods include recursive feature elimination (RFE) and sequential feature selection (SFS). Pros: can take into account the relationships between features and can be more accurate than filter methods. Cons: computationally expensive and can be sensitive to the choice of machine learning model.
+        3. Embedded methods: These methods use a machine learning model to select features during the training process. Features are selected based on their contribution to the performance of the model. Examples of embedded methods include Lasso and Ridge regression. Pros: can take into account the relationships between features and can be more accurate than filter methods. Cons: computationally expensive and can be sensitive to the choice of machine learning model.
+        4. Hybrid methods: These methods combine the strengths of different feature selection methods to improve the performance of the model. Examples of hybrid methods include combining filter and wrapper methods. Pros: can take into account the relationships between features and can be more accurate than filter methods. Cons: computationally expensive and can be sensitive to the choice of machine learning model.
+5. k-means clustering.
+    1. [E] How would you choose the value of k?
+        There are a few different methods that can be used to choose the value of k in k-means clustering. One popular method is the elbow method, which involves fitting the k-means model for different values of k and then plotting the sum of squared distances between data points and their closest cluster centroid (also called the within-cluster sum of squares) as a function of k. The value of k at which the within-cluster sum of squares begins to decrease at a slower rate is chosen as the optimal number of clusters.
+        Another method is the silhouette method, which involves measuring the similarity of each data point to its own cluster compared to other clusters. It ranges from -1 to 1. A higher value of silhouette score denotes that the point is well-matched to its own cluster.
+    1. [E] If the labels are known, how would you evaluate the performance of your k-means clustering algorithm?
+        Some extrinsic metrics are:
+            1. Normalized Mutual Information (NMI): Computes the mutual information between the true and predicted labels. 
+            2. Adjusted Rand Index (ARI): Computes the similarity between the true and predicted clusters using number of pair-wise correct predictions.
+            3. Fowlkes-Mallows Index (FMI): Is the geometric mean of precision and recall between true labels and predicted labels.
+    1. [M] How would you do it if the labels aren’t known?
+        Some intrinsic metrics are:
+            1. Silhouette score: Measures the within and between cluster distances, ranges from -1 to 1. Higher is better.
+            2. The Calinski-Harabasz index (CHI): Ratio of between cluster variance to within. The higher the better.
+            3. Davies-Bouldin Index (DBI): This measures the average similarity between each cluster and its most similar cluster. A lower value indicates better clustering.
+    1. [H] Given the following dataset, can you predict how K-means clustering works on it? Explain.
+        Given K = 2 the algorithm will start with 2 random data points as the center of the two clusters, it will then progress to picking another point and assigning it to either cluster depending on its distance with each centroid. The centroid of the assigned cluster will then get updated and so on and so forth. The final clusters depend on the initial choice of datapoints and we might want to run it multiple times to get the highest performance.
+        Let's assume that one of the centroids is in the ring cluster and the other is in the middle cluster, Given the shape of the ring cluster, the distance between the points that are on the opposite side/half of the ring will likely get assigned to the middle cluster because they are closer to the middle cluster, also some of the sparser points from the middle cluster may get assigned to outer cluster. So the final result might look like this. 
+        Algorithms such as HDBSCAN that are better with clusters of varying denstity and shape will probably be a better option for this data.
+        <center>
+            <img src="images/imageKMC.png" width="95%" alt="k-means clustering vs. gaussian mixture model" title="image_tooltip"><br>
+        </center>
+6. k-nearest neighbor classification.
+    1. [E] How would you choose the value of k?
+        1. Empirical testing: One approach is to try out different values of k and evaluate the performance of the classifier using a validation set or cross-validation. The value of k that results in the best performance is chosen.
+        2. Rule of thumb: A commonly used rule of thumb is to choose k to be the square root of the number of samples in the training set. This value is chosen as it balances the trade-off between overfitting and underfitting.
+        3. Cross-validation: Another approach is to use cross-validation techniques such as GridSearchCV or RandomizedSearchCV to find the optimal value of k.
+        4. Elbow method: Another approach is to use the elbow method. we plot the relationship between the number of clusters and WCSS (Within Cluster Sum of Squares) and select the elbow of the curve as the number of clusters to use in the algorithm.
+    1. [E] What happens when you increase or decrease the value of k?
+        A small k means the model relies on fewer data points in making a decision. This results in noisier and jagged boundries. 
+        A large k means the model averages more data points which smoothens the decision boundries.
+    1. [M] How does the value of k impact the bias and variance?     
+        The noisy and jagged boundries from a small k means that the model is overfitting and has high variance. The smoothness of the boundries from a larger k means the model has high bias.
+7. k-means and GMM are both powerful clustering algorithms.
+    1. [M] Compare the two.
+        1. K-means is sensitive to the initial choice of centroids and can get stuck in a local minima. GMM with expected maximization (EM) is less sensitive to the initial choice of parameters
+        2. K-means tries to minimize euclidean distance between points and the centroids, it therefore strugles when the clusters have different shapes and densities, whereas GMMs finds the clusters using Gaussian distributions and handle varying cluster shapes better.
+        3. K-means is simpler and faster than GMMs.
+    1. [M] When would you choose one over another?
+        If the clusters are of different shapes and sizes, GMM is a better choice. If the cluster shapes are all spherical and of roughly the same size, K-means is a faster and simpler choice.
+8. Bagging and boosting are two popular ensembling methods. Random forest is a bagging example while XGBoost is a boosting example.
+    1. [M] What are some of the fundamental differences between bagging and boosting algorithms?
+        1. Bagging (bootstrap aggregating) creates multiple samples with replacement from the dataset and trains models on each set independently. The final prediction is made by taking a vote from all predictors for classification and average of all for regression.
+        2. Boosting trains multiple weak learners on the same dataset but weights the samples based on the performance of each learner at any given stage. These learners are not trained independently. The sample weights are updated after each learner is fit to the data. This causes the incorrect predictions to get a higher weight and force the next learner to focus more on correcting those mistakes. 
+        3. Each weak learner is weighted in boosting and unlike bagging which all the predictors have the same weight, the total error made by each weak learner determines the final weight of it. The final prediction is therefore a weighted average of learners' predictions.
+    1. [M] How are they used in deep learning?
+        Bagging can be used to decrease the variance of neural nets, i.e. training various NNs on subsets of data with replacement. Boosting is typically used to improve the performance of weaker models, such as decision trees. In deep learning, neural networks are already powerful models and typically don't need boosting to improve performance. However, it is possible to use boosting algorithms to ensemble multiple neural networks together to further improve performance. One example could be training several different architectures of CNNs, such as VGG and ResNet, and then using a boosting algorithm to ensemble their predictions together to make a final prediction. This can help to reduce overfitting and improve the generalization of the model.
+9. Given this directed graph.
+    <center>
+      <img src="images/image30.png" width="30%" alt="Adjacency matrix" title="image_tooltip"><br>
+    </center>
+    1. [E] Construct its adjacency matrix.
+        [[0, 1, 0, 1, 1], [0, 0, 1, 1, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+    1. [E] How would this matrix change if the graph is now undirected?
+        If a directed graph becomes undirected, the adjacency matrix will change by making the matrix symmetric. In an undirected graph, if there is an edge between vertex i and vertex j, then there is also an edge between vertex j and vertex i. Therefore, the element in the ith row and jth column and jth row and ith column of the adjacency matrix will be the same. 
+    1. [M] What can you say about the adjacency matrices of two isomorphic graphs?
+        The adjacency matrices of two isomorphic graphs are identical up to a permutation of rows and columns. This means that if two graphs are isomorphic, their adjacency matrices will be the same when one of them is relabelled to match the other one. This is because the adjacency matrix of a graph represents the connectivity structure of the graph, which is preserved under isomorphism.
+10. Imagine we build a user-item collaborative filtering system to recommend to each user items similar to the items they’ve bought before.
+    1. [M] You can build either a user-item matrix or an item-item matrix. What are the pros and cons of each approach?
+        A user-item matrix is a matrix where each row represents a user and each column represents an item. The entries of the matrix indicate the interactions between users and items, such as purchases or ratings. The advantage of this approach is that it allows for easy interpretation of user preferences and item popularity. However, it can be computationally expensive when the number of users or items is large.
+        An item-item matrix is a matrix where each row and column represents an item. The entries indicate the similarity between pairs of items based on their interactions with users. This approach is computationally more efficient than the user-item matrix because it does not have to store information about all users. However, it can be less interpretable and harder to incorporate new items or users into the system.
+        In general, item-item matrix approach is more computationally efficient but less interpretable and harder to incorporate new items or users into the system.
+    1. [E] How would you handle a new user who hasn’t made any purchases in the past?
+        Some approaches to user cold start problem:
+            1. Use of demographic information: If demographic information is available for the new user, the system might recommend items that are popular among users with similar demographic characteristics.
+            2. Popularity-based recommendations: In the absence of any information, the system can recommend the most popular items. This can be useful for a new user, but it may not be personalized to their preferences.
+            3. Ask the user to rate or review some items, this way the model can understand the user preferences and make personalized recommendations
+11. [E] Is feature scaling necessary for kernel methods?
+    Depends on the kernel. Some like RBF are sensitive to scale but some kernal have built in scaling and don't need explicit scaling as a preprocessing step.
+12. Naive Bayes classifier.
+    19. [E] How is Naive Bayes classifier naive?
+        It assumes that all the features in the data are mutually independent, meaning that the presence or absence of one feature has no effect on the presence or absence of any other feature.
+    20. [M] Let’s try to construct a Naive Bayes classifier to classify whether a tweet has a positive or negative sentiment. We have four training samples:
+
+      <table>
+        <tr>
+         <td>
+      <strong>Tweet</strong>
+         </td>
+         <td><strong>Label</strong>
+         </td>
+        </tr>
+        <tr>
+         <td>This makes me so upset
+         </td>
+         <td>Negative
+         </td>
+        </tr>
+        <tr>
+         <td>This puppy makes me happy
+         </td>
+         <td>Positive
+         </td>
+        </tr>
+        <tr>
+         <td>Look at this happy hamster
+         </td>
+         <td>Positive
+         </td>
+        </tr>
+        <tr>
+         <td>No hamsters allowed in my house
+         </td>
+         <td>Negative
+         </td>
+        </tr>
+      </table>
+
+    According to your classifier, what's sentiment of the sentence `The hamster is upset with the puppy`?
+        The priors and likelihood of each word in the query should be calculated based on the training samples. Doing so, the probability of seeing hamster, upset and puppy in the positive class is higher than the negative class.
+
+13. Two popular algorithms for winning Kaggle solutions are Light GBM and XGBoost. They are both gradient boosting algorithms.
+    1. [E] What is gradient boosting?
+        Gradient Boosting is specifically designed to optimize a differentiable loss function, such as the mean squared error for regression, or the cross-entropy loss for classification. This allows the algorithm to use gradient descent to optimize the weights of the weak models.
+    1. [M] What problems is gradient boosting good for?
+        It's very versatile and can be used in regression, classification, ranking problems.
+14. SVM.
+    1. [E] What’s linear separation? Why is it desirable when we use SVM?
+    Linear separation is the ability of a classifier to separate the data points of different classes using a linear boundary. It is desirable when using Support Vector Machines (SVMs) because it allows the classifier to be represented by a simple hyperplane, which makes the optimization problem for finding the best hyperplane computationally efficient. 
+    1. [M] How well would vanilla SVM work on this dataset?
+
+      <center>
+        <img src="images/image31.png" width="30%" alt="Adjacency matrix" title="image_tooltip"><br>
+      </center>
+
+    1. [M] How well would vanilla SVM work on this dataset?
+
+      <center>
+        <img src="images/image32.png" width="30%" alt="Adjacency matrix" title="image_tooltip"><br>
+      </center>
+
+    1. [M] How well would vanilla SVM work on this dataset?
+      <center>
+        <img src="images/image33.png" width="27%" alt="Adjacency matrix" title="image_tooltip"><br>
+      </center>
+
 #### 8.2.1 Natural language processing
 1. RNNS
     1. [E] What’s the motivation for RNN?
@@ -8,7 +166,7 @@
         Dropout can be applied in a RNN in different ways:
         1. It can be applied to the hidden state that goes to the output and not to the next timestamp. Note that different samples in a mini-batch should have different dropout masks but the same sample in different time steps should have the same mask
         2. It can be applied to the inputs x_t
-        3. It can be applied to the weights between the hidden states. Note that the same dropout mask should be used for all time steps in a mini-batch
+        3. It can be applied to the weights between the hidden states (on the recurrent states). Note that the same dropout mask should be used for all time steps in a mini-batch
 2. [E] What’s density estimation? Why do we say a language model is a density estimator?
     Density estimation means estimating the probability density function (PDF) of a random variable from a set of observations. The PDF of a variable describes the probability of the variable taking on different values. 
 
@@ -23,7 +181,7 @@
     
     2. [M] What’s the difference between count-based and prediction-based word embeddings?
     
-    Count-based embeddings learn the embeddings based on the co-occurrences of words across a large dataset. GloVe is a count-based embedding method. Prediction-based word embeddings learns the embeddings by learning to predict a word of set of words based on the surrounding words and minimising the prediction loss
+    Count-based embeddings learn the embeddings based on the co-occurrences of words across a large dataset. GloVe is a count-based embedding method. Prediction-based word embeddings learns the embeddings by learning to predict a word or set of words based on the surrounding words and minimising the prediction loss.
     
     3. [H] Most word embedding algorithms are based on the assumption that words that appear in similar contexts have similar meanings. What are some of the problems with context-based word embeddings?
     
@@ -72,7 +230,7 @@
 8. [M] What problems might we encounter when using softmax as the last layer for word-level language models? How do we fix it?
     The issue is that with large vocabularies, the softmax computation is very expensive as there are B (batch size) * d (model dimension) * V (vocab size)parameters. 
     There are a number of alternatives to using a standard softmax layer:
-        1. Hierarchical softmax: Words are leaves of a tree and nodes and instead of predicting the probability of each word, the probability of nodes are predicted
+        1. Hierarchical softmax: Words are leaves of a tree and instead of predicting the probability of each word, the probability of nodes are predicted
         1. Differentiated softmax: Is based on the intuition that not all words require the same number of parameters: Many occurrences of frequent words allow us to fit many parameters to them, while extremely rare words might only allow to fit a few
         1. Sampling softmax: By using different sampling techniques, e.g. negative sampling, this alternative approximates the normalization in the denominator of the softmax with some other loss that is cheap to compute. However, sampling-based approaches are only useful at training time -- during inference, the full softmax still needs to be computed to obtain a normalised probability.
     Related articles: https://towardsdatascience.com/how-to-overcome-the-large-vocabulary-bottleneck-using-an-adaptive-softmax-layer-e965a534493d, https://ruder.io/word-embeddings-softmax/index.html#hierarchicalsoftmax
@@ -116,17 +274,21 @@
 1. [E] What is the role of zero padding?
     Zero padding is the process of adding zeros to the edges of the input. One reason for this is to enforce a certain size to the output of the convolution. Another benefit of zero padding is that more edge pixels will be included in the convolution and therefore more information will be captured.
 1. [E] Why do we need upsampling? How to do it?
-    Upsampling is needed to restore the desired resolution after downsampling. There are different technicques for upsampling, some are independent of the input data. For example, Nearest Neighbors, Interpolation or Bed of Nails. All these methods involve copying some of the input values or filling in zeros in some postions. Another technique is called Transposed Convolutions which involves striding a kernal on the downsampled image. To elaborate, each element in the input is multiplied with each element in the kernal and the overlapping results are summed up. The striding kernal is learned during training so unlike the other techniques it is dependant on the data. 
+    Upsampling is needed to restore the desired resolution after downsampling. There are different techniques for upsampling, some are independent of the input data. For example, Nearest Neighbors, Interpolation or Bed of Nails. All these methods involve copying some of the input values or filling in zeros in some postions. Another technique is called Transposed Convolutions which involves striding a kernal on the downsampled image. To elaborate, each element in the input is multiplied with each element in the kernal and the overlapping results are summed up. The striding kernal is learned during training so unlike the other techniques it is dependant on the data. 
     Here's an article with illustrations of these techniques: https://towardsdatascience.com/transposed-convolution-demystified-84ca81b4baba  
 1. [M] What does a 1x1 convolutional layer do?
     It's used as a dimensionality reduction method to reduce the number of feature maps before applying expensive convolutions in the further layers.
 1. Pooling.
     1. [E] What happens when you use max-pooling instead of average pooling?
-        All the features from the filter are considered and passed to the next layer. This results in a smoother image compared to the output of max pooling which detects the sharp and brighter pixels.
+        In avertage pooling, all the features from the filter are considered and passed to the next layer. This results in a smoother image compared to the output of max pooling which detects the sharp and brighter pixels.
     1. [E] When should we use one instead of the other?
-        If the input images are objects with a dark background and we are interested in detecting the foreground objects, max-pooling is better
-    1. [E] What happens when pooling is removed completely?
         It depends on the task and objective. Average pooling will include all the features in the feature map whereas max pooling has data loss and only considers the highest values and misses out on the other details related to the rest of the image. If the task is to detect edges for example, max pooling is a better choice. 
+    1. [E] What happens when pooling is removed completely?
+        Increased computation complexity: Without pooling, the model would have to compute activations for all neurons in the feature maps, leading to an increase in the number of computations and time required to process an input.
+
+        Increased memory usage: The model would need to store activations for all neurons in the feature maps, leading to an increase in memory usage.
+
+        Loss of spatial invariance: Pooling is used to reduce the spatial resolution of feature maps, which helps to make the model invariant to small translations and rotations in the input. Without pooling, the model would be sensitive to small variations in the input.
     1. [M] What happens if we replace a 2 x 2 max pool layer with a conv layer of stride 2?
         Replacing a 2x2 max pool layer with a convolutional layer with a stride of 2 would result in the same spatial downsampling of the feature maps. However, the main difference is that a convolutional layer also learns to extract features from the input data, while a max pooling layer only performs spatial downsampling. Also, the conv layer adds to the number of learnable parameters while max pooling doesn't.
 1. [M] When we replace a normal convolutional layer with a depthwise separable convolutional layer, the number of parameters can go down. How does this happen? Give an example to illustrate this.
@@ -177,20 +339,20 @@ To refresh your knowledge on deep RL, checkout [Spinning Up in Deep RL](https://
 #### 8.2.4 Other
 
 36. [M] An autoencoder is a neural network that learns to copy its input to its output. When would this be useful?
-        The main goal of an autoencoder is to learn the latent represenation of the input, such that the output can reconstruct the input from this compact, low dimensional latent space. 
-        There are many use cases for this:
-            1. Compression and storage: autoencoders can be used to reduce the size of the input by learning a compact representation and reconstructing it back when needed. 
-            2. Denoising: the encoder portion of an autoencoder can be used to remove the noise from the input while preserving the underlying structure and outputting the denoised version from the decoder.
-            3. Anomoly detection: The learned representations of the input can be used to identify outliers at inference.
-            4. Generative models: The learned latent space of the encoder can be sampled and used by the generator to generate new data similar to the inputs.
-            5. Transfer learning and feature extraction: An encoder from the pretrained autoencoder can be used as an embedder to project the inputs to an embedding space which can be used as features to a classification model for example.
+    The main goal of an autoencoder is to learn the latent represenation of the input, such that the output can reconstruct the input from this compact, low dimensional latent space. 
+    There are many use cases for this:
+        1. Compression and storage: autoencoders can be used to reduce the size of the input by learning a compact representation and reconstructing it back when needed. 
+        2. Denoising: the encoder portion of an autoencoder can be used to remove the noise from the input while preserving the underlying structure and outputting the denoised version from the decoder.
+        3. Anomoly detection: The learned representations of the input can be used to identify outliers at inference.
+        4. Generative models: The learned latent space of the encoder can be sampled and used by the generator to generate new data similar to the inputs.
+        5. Transfer learning and feature extraction: An encoder from the pretrained autoencoder can be used as an embedder to project the inputs to an embedding space which can be used as features to a classification model for example.
 37. Self-attention.
     15. [E] What’s the motivation for self-attention?
-            The motivation behind self-attention is for an the model to attend to different parts of the inputs that are relevant to the task at hand. It does this by calculating weights for each of the parts. The parts that are more relevant to the task at hand get higher weights. These weights are used to determine the contribution of different input componenets when making a predition.
+        The motivation behind self-attention is for an the model to attend to different parts of the inputs that are relevant to the task at hand. It does this by calculating weights for each of the parts. The parts that are more relevant to the task at hand get higher weights. These weights are used to determine the contribution of different input componenets when making a predition.
     16. [E] Why would you choose a self-attention architecture over RNNs or CNNs?
-            1. One limitation of RNNs and CNNs that self-attention resolves is assigning different weights to the inputs based on their relevance.
-            2. Attention-based models are better with longer-term dependecies
-            3. Attention-based models can run in parallel and are therefore more computationally efficient than RNNs
+        1. One limitation of RNNs and CNNs that self-attention resolves is assigning different weights to the inputs based on their relevance.
+        2. Attention-based models are better with longer-term dependecies
+        3. Attention-based models can run in parallel and are therefore more computationally efficient than RNNs
     17. [M] Why would you need multi-headed attention instead of just one head for attention?
         According to the Attention Is All You Need paper (https://arxiv.org/pdf/1706.03762.pdf), multi-head attention allows the model to attend to words other than the current input from different representation subspaces. In other words, using multiple heads in the allows the model to learn different types of relationships between elements in the input sequence and attend to different granularity and modalities of the input, which improves the performance of the model. 
     18. [M] How would changing the number of heads in multi-headed attention affect the model’s performance?
@@ -206,12 +368,12 @@ To refresh your knowledge on deep RL, checkout [Spinning Up in Deep RL](https://
     21. [M] How do Bayesian methods differ from the mainstream deep learning approach?
         The main difference is that Bayesian methods model a probability distribution of the parameters, and therefore model the uncertainty of predictions whereas mainstream deep learning approaches optimize for reducing the training/validation error and do not model uncertainty.
     22. [M] How are the pros and cons of Bayesian neural networks compared to the mainstream neural networks?
-            1. BNNs give uncertainty of predictions
-            2. BNNs are more interpretable than mainstream NNs
-            3. BNNs less prone to overfitting
-            However,
-            4. BNNs are computationally expensive during inference, since multiple forward passes is needed
-            5. BNNs require more data than mainstream NNs to model the posteriors
+        1. BNNs give uncertainty of predictions
+        2. BNNs are more interpretable than mainstream NNs
+        3. BNNs less prone to overfitting
+        However,
+        4. BNNs are computationally expensive during inference, since multiple forward passes is needed
+        5. BNNs require more data than mainstream NNs to model the posteriors
     23. [M] Why do we say that Bayesian neural networks are natural ensembles?
         The model predictions are made by averaging over multiple models, each corresponding to a different set of parameter values drawn from the distributions. This process can be seen as a form of model averaging, where the final prediction is the average of the predictions made by multiple models. This can be seen as "natural ensembles", where the different models correspond to different sets of parameter values. The averaging process allows the model to make probabilistic predictions, and to quantify the uncertainty of its predictions.
 40. GANs.
@@ -257,7 +419,7 @@ To refresh your knowledge on deep RL, checkout [Spinning Up in Deep RL](https://
             1. The exact point at which the function is not differentiable is seldom reached in an algorithm.
             2. At the point of non-differentiability, you can assign the derivative of the function at the point “right next” to the singularity and the algorithm will work fine. For example, in ReLU we can give the derivative of the function at zero as 0. It would not make any difference in the backpropagation algorithm because the distance between the point zero and the “next” one is zero.
     31. [M] Derive derivatives for sigmoid function $$\sigma(x)$$ when $$x$$ is a vector.
-            y'(x) = sigma(x) * (1 - sigma(x)) , where the function and the subtraction are applied component-wise.
+        y'(x) = sigma(x) * (1 - sigma(x)) , where the function and the subtraction are applied component-wise.
 45. [E] What’s the motivation for skip connection in neural works?
     The motivation is to address the problem of vanishing gradients. Skip connections help to address this problem by allowing the gradients to bypass one or more layers in the network and flow directly to the earlier layers. This helps to ensure that the gradients are larger and can more easily flow back through the network, allowing the network to learn more effectively.
 46. Vanishing and exploding gradients.
@@ -301,24 +463,75 @@ To refresh your knowledge on deep RL, checkout [Spinning Up in Deep RL](https://
     35. [E] What’s learning rate warmup? Why do we need it?
         Learning rate warmup is a technique used to gradually increase the learning rate during the initial stages of training. The idea is to start with a small learning rate and gradually increase it over a certain number of training steps or epochs.
         There are several reasons why learning rate warmup can be useful:
+        
         High learning rate instability: When starting with a high learning rate, the model's weights can fluctuate a lot, leading to instability and poor performance. Learning rate warmup allows the model to converge to a stable solution before increasing the learning rate.
+        
         Avoiding poor local minima: Starting with a high learning rate can cause the model to converge to a poor local minimum, rather than a global minimum. Learning rate warmup allows the model to explore the parameter space before settling into a suboptimal solution.
+        
         Gradient sparsity: When the gradients are sparse, it can be hard for the optimizer to make progress with a high learning rate. A warmup period allows the optimizer to converge to a good initial point before increasing the learning rate.
 54. [E] Compare batch norm and layer norm.
     Batch norm transforms the output of each layer based on the mean and variance of all the samples in the batch. In other words, it computes the mean and variance of each feature across all batch samples and trasforms each batch's feature value based on the calculated statistics. This means the the batch size and sequence length affects batch normalization. Also, because the statistics depend on all the batch samples, using batch norm in parallel settings is difficult.
     On the other hand, layer norm is independent on the batch and calculates the mean and variance for each sample separately, and is therefore better suited for when the sequence lengths are different in a batch or when the training is done in parallel.
-    layernorm is more suitable for NLP tasks where the sequence lenghts vary. batch norm is more common in computer vision tasks.
+    Layernorm is more suitable for NLP tasks where the sequence lenghts vary whereas batch norm is more common in computer vision tasks.
 55. [M] Why is squared L2 norm sometimes preferred to L2 norm for regularizing neural networks?
     Squared L2 norm has a smooth gradient everywhere, as opposed to L2 norm which has a kink at the origin. This helps with stable updates and faster convergence.
 56. [E] Some models use weight decay: after each gradient update, the weights are multiplied by a factor slightly less than 1. What is this useful for?
+    Weight decay is a regularization technique that encourages the model to have smaller weights by applying a small multiplicative factor slightly less than 1 to the weights after each gradient update. This can help to prevent overfitting by preventing the model from becoming too confident in any particular weight.
 57. It’s a common practice for the learning rate to be reduced throughout the training.
     36. [E] What’s the motivation?
+        We start with a large learning rate at the beginning of training, when the gradients are large and the model is far from the optimal solution. As training progresses, the gradients become smaller, and a smaller learning rate is needed to make small adjustments to the weights.
     37. [M] What might be the exceptions?
+        1. Fine-tuning a pre-trained model. In this case the gradients are likely going to be low that we don't want to start off with a high rate at the beginning.
+        2. Stochastic Gradient Descent with momentum or adaptive learning rate optimization methods like Adam, Adagrad or Adadelta: These methods can adapt the learning rate during training, which can help to find the optimal learning rate without the need for explicit learning rate scheduling.
 58. Batch size.
     38. [E] What happens to your model training when you decrease the batch size to 1?
+        Batch size of 1 (SGD) means that the model parameters are updated after each sample. This has the advantage of being able to train on very large datasets that will not fit into memory to be loaded at once. However, has many drawbacks:
+            1. High variance: The gradients calculated from a single example is very noisy and causes the weights to fluctuate a lot during training
+            2. Slower convergence: Due to the noisy gradients, convergence will be slow.
+            3. Computationally inefficient: Parameter updates after each sample pass is time consuming and computationally inefficient.
     39. [E] What happens when you use the entire training data in a batch?
+        Using the entire dataset as a batch (bath gradient descent) has the advantage of faster convergence since the model updates its parameters based on all the data points and which is less noisy. However, there are some downsides:
+            1. Large memory requirements: loading the entire dataset at once may be infeasible depending on the size of the data.
+            2. Slower training: Since all the datapoints are used to compute the gradients, it can be slow.
     40. [M] How should we adjust the learning rate as we increase or decrease the batch size?
+        A smaller batch size means that the gradients will be noisy so the learning rate should be higher to account for that. Larger batch size requires smaller learning rate because the gradients are more stable, so we want to take smaller steps and avoid overshooting.
 59. [M] Why is Adagrad sometimes favored in problems with sparse gradients?
+    Adagrad adapts the learning rate of each parameter by dividing a fixed learning rate with the square root of the the cumulative sum of that parameter's squared gradients. This means that parameters that are not frequent (sparse parameters), the division value will be low and therefore the learning rate will be high. This helps the model to converge quickly for those parameters.
 60. Adam vs. SGD.
     41. [M] What can you say about the ability to converge and generalize of Adam vs. SGD?
-    42. [M] What else can you say about the difference between these two optimizers? 
+        Adam uses different learning rates for the model paramaters by using the exponentially moving average of the first and second moments of the gradients. This makes it faster to converge. It is better in generalization than SGD because it is less sensative to the choice of the initial learning rate.
+    42. [M] What else can you say about the difference between these two optimizers?
+        Adam typically requires less fine-tuning of the learning rate as compared to SGD, which is especially useful when the dataset is large, or the number of parameters is large.
+61. [M] With model parallelism, you might update your model weights using the gradients from each machine asynchronously or synchronously. What are the pros and cons of asynchronous SGD vs. synchronous SGD?
+    ASGD updates the parameters faster than SSGD because each machine has its own version of the model parameters and updates them as soon as it computes the gradients. However, because it does not use the updates from other machines, the gradients it uses might be stale and overall will require more steps to converge.
+62. [M] Why shouldn’t we have two consecutive linear layers in a neural network?
+    The main reason for this is that a linear function is, by definition, a function that preserves the linearity of the input. So if we have two consecutive linear layers, the output of the first linear layer will be passed through the second linear layer without any changes, meaning that the second linear layer will not be able to introduce any non-linearity to the data. This lack of non-linearity can cause problems for the training process because it limits the ability of the network to learn complex and non-linear relationships between inputs and outputs. With only linear layers, the neural network will not be able to learn any non-linear functions, which can limit its ability to generalize to new data.
+63. [M] Can a neural network with only RELU (non-linearity) act as a linear classifier?
+    ReLU is a non-linear function, meaning that it does not obey the superposition principle, and therefore a neural network with only ReLU non-linearity will not be a linear classifier. For a neural network to act as a linear classifier, it should have a linear activation function such as Identity activation function or a linear perceptron with all the weights and bias set to zero.
+64. [M] Design the smallest neural network that can function as an XOR gate.
+    The smallest neural network that can function as an XOR gate is a single layer perceptron with two inputs, two hidden units and one output unit. The input layer takes in the two binary inputs, the hidden layer uses an activation function such as a sigmoid function to process the inputs and produce the output. The output unit will use a threshold function to produce the final binary output.
+65. [E] Why don’t we just initialize all weights in a neural network to zero?
+    Because it creates a symmetry problem. If all neurons have the same weight values at initialization, during backpropagation, the gradients will be the same for all neurons and during each iteration the weights will update in the same way for all the neurons, this will not allow the network to learn different features and will not be able to generalize well.
+66. Stochasticity.
+    43. [M] What are some sources of randomness in a neural network?
+        Weight initialization, dropout, data splitting in batches.
+    44. [M] Sometimes stochasticity is desirable when training neural networks. Why is that?
+        It can help the models avoid getting stuck in a local minima, and generalize better.
+67. Dead neuron.
+    45. [E] What’s a dead neuron?
+        Dead neurons are neurons in a neural network that have become ineffective during training. This can happen when the weights of the neuron are updated such that the output of the neuron is always close to zero, or when the gradient with respect to the weights of the neuron is close to zero. Dead neurons can cause problems for the neural network
+    46. [E] How do we detect them in our neural network?
+        1. Monitoring the output of individual neurons: One way to detect dead neurons is to monitor the output of individual neurons during training. If the output of a neuron is always close to zero or has very small gradient, then it could be considered a dead neuron.
+        2. Visualizing the weights of the network: Another way to detect dead neurons is to visualize the weights of the network. If the weights of a neuron are not updating during training, or if they are consistently close to zero, then it could be considered a dead neuron.
+        3. Analyzing the gradients: Analyzing the gradients of the weights of the network can also reveal dead neurons. If the gradients for a particular neuron are consistently close to zero, it could be considered a dead neuron.
+    47. [M] How to prevent them?
+        There are techniques to prevent it such as using a smaller learning rate, using activation functions that have a non-zero derivative everywhere and using weight initialization techniques that are specifically designed to avoid dead neurons.
+68. Pruning.
+    48. [M] Pruning is a popular technique where certain weights of a neural network are set to 0. Why is it desirable?
+        It can be useful for model compression to reduce the size of a trained model by removing the less informative componenets. It can also be used to reduce latency during inference. 
+    49. [M] How do you choose what to prune from a neural network?
+        A threshold can be set to determine what weights should be set to zero, i.e. those that are below the threshold. Another way is to monitor activation outputs, to identify dead neurons and remove them.
+69. [H] Under what conditions would it be possible to recover training data from the weight checkpoints?
+    Weight checkpoints are generally used to resume the training process after the training was unexpectedly interupted. The data itself is not saved with checkpoints but in some conditions it may be possible to sample the data from the weights. For example, if the data compression was performed before training and the compression algorithm is known, reverse engineering the compression on the weights might work. 
+70. [H] Why do we try to reduce the size of a big trained model through techniques such as knowledge distillation instead of just training a small model from the beginning?
+    Larger models can learn better feature representations than smaller models. With techniques such as distillation we can benefit from the better presentation learned by larger models and the computational efficiency of smaller models.
