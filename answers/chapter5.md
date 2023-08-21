@@ -23,16 +23,16 @@
        Their outer product is given as $a \times b$ which is also known as the 'cross product' given by $a^Tb$\
        $$a^Tb = 
        \begin{bmatrix}
-       3\\
-       2\\
+       3 \\
+       2 \\
        1
        \end{bmatrix} \times
        \begin{bmatrix}
        -1 & 0 & 1
        \end{bmatrix} = 
        \begin{bmatrix}
-       -3 & 0 & 3\\
-       -2 & 0 & 2\\
+       -3 & 0 & 3 \\
+       -2 & 0 & 2 \\
        -1 & 0 & 1
        \end{bmatrix}
        $$
@@ -54,9 +54,9 @@
    $A = {a_1, a_2, a_3, ..., a_n}$ can be written as \
    $$A = 
    \begin{bmatrix}
-       a_1\\
-       a_2\\
-       a_3\\
+       a_1 \\
+       a_2 \\
+       a_3 \\
        a_n
    \end{bmatrix}
    $$
