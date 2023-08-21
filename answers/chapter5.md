@@ -38,9 +38,9 @@
        \end{bmatrix}
        $$
        
-    ```math
+```math
 \begin{bmatrix}X\\Y\end{bmatrix}
-    ```
+```
     1. [M] Give an example of how the outer product can be useful in ML.\
        [A] Following are the use cases where the outer product of the vectors can be useful in ML.
        1. Measure orthogonality of 2 vectors: Two vectors are said to be orthogonal of the angle between them is $90\degree$ and the outer product among them is maximum.
