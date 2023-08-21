@@ -21,7 +21,8 @@
        [A] Given \
        $$a = [3, 2, 1],    b = [-1, 0, 1]$$\
        Their outer product is given as $a \times b$ which is also known as the 'cross product' given by $a^Tb$\
-       $$a^Tb = 
+       ```math
+       a^Tb = 
        \begin{bmatrix}
        3 \\
        2 \\
@@ -35,7 +36,7 @@
        -2 & 0 & 2 \\
        -1 & 0 & 1
        \end{bmatrix}
-       $$
+       ```
        
     1. [M] Give an example of how the outer product can be useful in ML.\
        [A] Following are the use cases where the outer product of the vectors can be useful in ML.
@@ -51,15 +52,17 @@
 5. [M] Given two sets of vectors $A = {a_1, a_2, a_3, ..., a_n}$ and $B = {b_1, b_2, b_3, ... , b_m}$. How do you check that they share the same basis?\
    [A] In order to check whether two sets of vectors share the same basis, we need to find out the number of independent vectors in their respective vector spaces and compare if they are equal. The set of independent vectors is given by the rank of their augmented matrices.
 
-   $A = {a_1, a_2, a_3, ..., a_n}$ can be written as \
-   $$A = 
-   \begin{bmatrix}
-       a_1 \\
-       a_2 \\
-       a_3 \\
-       a_n
-   \end{bmatrix}
-   $$
+   $A = {a_1, a_2, a_3, ..., a_n}$ can be written as 
+   ```math
+   A =
+\begin{bmatrix}
+   a_1 \\
+   a_2 \\
+   a_3 \\
+   a_n
+\end{bmatrix}
+    
+   <!-- $$A = \left[a \atop a \atop a \atop a\right]$$ -->
    Rank can be found by iteratively performing linear transformation among the rows till we achieve non zero rows those will be the linearly independent rows of the matrix and will be equal to the rank of this matrix.
    
 7. [M] Given $n$ vectors, each of $d$ dimensions. What is the dimension of their span?\
