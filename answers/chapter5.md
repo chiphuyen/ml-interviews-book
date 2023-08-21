@@ -37,11 +37,8 @@
        -1 & 0 & 1
        \end{bmatrix}
        $$
-       
-```math
-\begin{bmatrix}X\\Y\end{bmatrix}
-```
-    1. [M] Give an example of how the outer product can be useful in ML.\
+
+     2. [M] Give an example of how the outer product can be useful in ML.\
        [A] Following are the use cases where the outer product of the vectors can be useful in ML.
        1. Measure orthogonality of 2 vectors: Two vectors are said to be orthogonal of the angle between them is $90\degree$ and the outer product among them is maximum.
        2. Correlation between 2 vectors
@@ -56,15 +53,10 @@
    [A] In order to check whether two sets of vectors share the same basis, we need to find out the number of independent vectors in their respective vector spaces and compare if they are equal. The set of independent vectors is given by the rank of their augmented matrices.
 
    $A = {a_1, a_2, a_3, ..., a_n}$ can be written as 
-   $$
-   A =
-\begin{bmatrix}
-   a_1 \\
-   a_2 \\
-   a_3 \\
-   a_n
-\end{bmatrix}
-    $$
+   
+    ```math
+A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
+
    <!-- $$A = \left[a \atop a \atop a \atop a\right]$$ -->
    Rank can be found by iteratively performing linear transformation among the rows till we achieve non zero rows those will be the linearly independent rows of the matrix and will be equal to the rank of this matrix.
    
