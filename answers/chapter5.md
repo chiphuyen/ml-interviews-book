@@ -4,7 +4,7 @@
     1. [E] What’s the geometric interpretation of the dot product of two vectors?\
        [A] In the geometric context, the dot product of 2 vecotrs is projection of one vector over another.
         For the given geometric vectors $\overrightarrow A$ and $\overrightarrow B$, their dot product is given by\
-           $\overrightarrow A.\overrightarrow B = |\overrightarrow A|.|\overrightarrow B|.cos\theta$ 
+           $$\overrightarrow A.\overrightarrow B = |\overrightarrow A|.|\overrightarrow B|.cos\theta$$ 
        ![](vectors1.png)
        
     2. [E] Given a vector $u$, find vector $v$ of unit length such that the dot product of $u$ and $v$ is maximum.\
@@ -14,14 +14,14 @@
        $= |\vec{u}|.1$\
        The vector $v$ of unit length to yield max dot product with $u$ is given by 
        $\vec{u}.\vec{v}$ = $= |\vec{u}|$\
-       $\vec{v} = \frac{|\vec{u}|}{\vec{u}}$
+       $$\vec{v} = \frac{|\vec{u}|}{\vec{u}}$$
        
 2. Outer product
     1. [E] Given two vectors $a = [3, 2, 1]$ and  $b = [-1, 0, 1]$. Calculate the outer product $a^Tb$?\
        [A] Given \
-       $a = [3, 2, 1]$   $b = [-1, 0, 1]$\
+       $$a = [3, 2, 1],    b = [-1, 0, 1]$$\
        Their outer product is given as $a \times b$ which is also known as the 'cross product' given by $a^Tb$\
-       $a^Tb = 
+       $$a^Tb = 
        \begin{bmatrix}
        3\\
        2\\
@@ -35,7 +35,7 @@
        -2 & 0 & 2\\
        -1 & 0 & 1
        \end{bmatrix}
-       $
+       $$
        
     1. [M] Give an example of how the outer product can be useful in ML.\
        [A] Following are the use cases where the outer product of the vectors can be useful in ML.
@@ -45,21 +45,21 @@
           
 3. [E] What does it mean for two vectors to be linearly independent?\
    [A] Linearly independent vectors are orthogonal to each other. In such a situation, angel between the vectors will be $90\degree$. Which means their outer product will be zero.\
-   $\vec{u}\times\vec{v} = |\vec{u}|.|\vec{v}|.sin\theta = 0$
+   $$\vec{u}\times\vec{v} = |\vec{u}|.|\vec{v}|.sin\theta = 0$$
 
    
 5. [M] Given two sets of vectors $A = {a_1, a_2, a_3, ..., a_n}$ and $B = {b_1, b_2, b_3, ... , b_m}$. How do you check that they share the same basis?\
    [A] In order to check whether two sets of vectors share the same basis, we need to find out the number of independent vectors in their respective vector spaces and compare if they are equal. The set of independent vectors is given by the rank of their augmented matrices.
 
    $A = {a_1, a_2, a_3, ..., a_n}$ can be written as \
-   $A = 
+   $$A = 
    \begin{bmatrix}
        a_1\\
        a_2\\
        a_3\\
        a_n
    \end{bmatrix}
-   $
+   $$
    Rank can be found by iteratively performing linear transformation among the rows till we achieve non zero rows those will be the linearly independent rows of the matrix and will be equal to the rank of this matrix.
    
 7. [M] Given $n$ vectors, each of $d$ dimensions. What is the dimension of their span?\
