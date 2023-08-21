@@ -20,24 +20,13 @@
     1. [E] Given two vectors $a = [3, 2, 1]$ and  $b = [-1, 0, 1]$. Calculate the outer product $a^Tb$?\
        [A] Given \
        $$a = [3, 2, 1],    b = [-1, 0, 1]$$\
-       Their outer product is given as $a \times b$ which is also known as the 'cross product' given by $a^Tb$\
-       $$
-       a^Tb = 
-       \begin{bmatrix}
-       3 \\
-       2 \\
-       1
-       \end{bmatrix} \times
-       \begin{bmatrix}
-       -1 & 0 & 1
-       \end{bmatrix} = 
-       \begin{bmatrix}
-       -3 & 0 & 3 \\
-       -2 & 0 & 2 \\
-       -1 & 0 & 1
-       \end{bmatrix}
-       $$
+       Their outer product is given as $a \times b$ which is also known as the 'cross product' given by $a^Tb$
 
+```math
+a^Tb = \begin{bmatrix}3\\2\\1\end{bmatrix} \times \begin{bmatrix}-1&0&1\end{bmatrix} = \begin{bmatrix}-3&0&3\\-2&0&2\\-1&0&1\end{bmatrix}
+```
+<!-- $$A = \left[a \atop a \atop a \atop a\right]$$ -->
+E
      2. [M] Give an example of how the outer product can be useful in ML.\
        [A] Following are the use cases where the outer product of the vectors can be useful in ML.
        1. Measure orthogonality of 2 vectors: Two vectors are said to be orthogonal of the angle between them is $90\degree$ and the outer product among them is maximum.
