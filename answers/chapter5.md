@@ -54,8 +54,9 @@
 
    $A = {a_1, a_2, a_3, ..., a_n}$ can be written as 
    
-    ```math
+```math
 A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
+```
 
    <!-- $$A = \left[a \atop a \atop a \atop a\right]$$ -->
    Rank can be found by iteratively performing linear transformation among the rows till we achieve non zero rows those will be the linearly independent rows of the matrix and will be equal to the rank of this matrix.
