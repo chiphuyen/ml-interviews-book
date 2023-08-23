@@ -1,7 +1,7 @@
-### Notation
+### نشانه گذاری
 
-_If some characters seem to be missing, it's because MathJax is not loaded correctly. Refreshing the page should fix it._
+_اگر برخی از کاراکترها گم شده اند، به این دلیل است که MathJax به درستی بارگذاری نشده است. بازخوانی صفحه باید آن را برطرف کند._
 
-*   All vectors in this book are column vectors of dimension $$n \times 1$$, with $$n$$ being the number of elements in that vector.
-* 	A superscript is used for a sample’s index. The $$i^{th}$$ element in the dataset is denoted $$x^{(i)}$$.
-*	A subscript is used for dimension. $$x_1$$ of an $$n \times n$$ matrix denotes its first row.
+* همه بردارهای این کتاب بردارهای ستونی با بعد $$n \times 1$$ هستند که $$n$$ تعداد عناصر آن بردار است.
+* برای نمایه نمونه از یک بالانویس استفاده می شود. عنصر $$i^{th}$$ در مجموعه داده با $$x^{(i)}$$ نشان داده می شود.
+* یک زیرنویس برای بعد استفاده می شود. $$x_1$$ از ماتریس $$n \times n$$ نشان دهنده ردیف اول آن است.
