@@ -2,11 +2,10 @@
 
 1. Dot product
     1. [E] What’s the geometric interpretation of the dot product of two vectors?\
-       [A] In the geometric context, the dot product of 2 vecotrs is projection of one vector over another.
-        For the given geometric vectors $\overrightarrow A$ and $\overrightarrow B$, their dot product is given by\
+       [A] In the geometric context, the dot product of 2 vecotrs is projection of one vector over another. For the given geometric vectors $\overrightarrow A$ and $\overrightarrow B$, their dot product is given by\
            $$\overrightarrow A.\overrightarrow B = |\overrightarrow A|.|\overrightarrow B|.cos\theta$$
-       
-       ![vectors](imgs/vectors1.png)
+       <p align="center"><img width="500em" src="imgs/vectors1.png"/></p>
+       <!-- ![vectors](imgs/vectors1.png) -->
        
     3. [E] Given a vector $u$, find vector $v$ of unit length such that the dot product of $u$ and $v$ is maximum.\
        [A] Dot product of $\vec{u}$ and $\vec{v}$ is givenby $|\vec{u}|.|\vec{v}|.cos\theta$. Where $|\vec{u}|$ and $\vec{v}$ are the magnitude of the vectors respectively. This dot product will be maximum when $cos\theta$ will be maximum, which occurs when $\theta = 0$ i.e both the vector overlap with each other.\
@@ -17,7 +16,7 @@
        $\vec{u}.\vec{v}$ = $= |\vec{u}|$\
        $$\vec{v} = \frac{|\vec{u}|}{\vec{u}}$$
        
-2. Outer product
+3. Outer product
     1. [E] Given two vectors $a = [3, 2, 1]$ and  $b = [-1, 0, 1]$. Calculate the outer product $a^Tb$?\
        [A] Given \
        $$a = [3, 2, 1],    b = [-1, 0, 1]$$\
