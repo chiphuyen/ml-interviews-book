@@ -4,10 +4,11 @@
     1. [E] What’s the geometric interpretation of the dot product of two vectors?\
        [A] In the geometric context, the dot product of 2 vecotrs is projection of one vector over another. For the given geometric vectors $\overrightarrow A$ and $\overrightarrow B$, their dot product is given by\
            $$\overrightarrow A.\overrightarrow B = |\overrightarrow A|.|\overrightarrow B|.cos\theta$$
-       <p align="center"><img width="500em" src="./imgs/vectors1.png"/></p>
-       <!-- ![vectors](imgs/vectors1.png) -->
-       
-    3. [E] Given a vector $u$, find vector $v$ of unit length such that the dot product of $u$ and $v$ is maximum.\
+<p align="center"><img width="500em" src="./imgs/vectors1.png"/></p>
+
+
+1.
+    2. [E] Given a vector $u$, find vector $v$ of unit length such that the dot product of $u$ and $v$ is maximum.\
        [A] Dot product of $\vec{u}$ and $\vec{v}$ is givenby $|\vec{u}|.|\vec{v}|.cos\theta$. Where $|\vec{u}|$ and $\vec{v}$ are the magnitude of the vectors respectively. This dot product will be maximum when $cos\theta$ will be maximum, which occurs when $\theta = 0$ i.e both the vector overlap with each other.\
        Since, $max |\vec{u}|.|\vec{v}|.cos\theta$\
        $= |\vec{u}|.|\vec{v}|.1$\
@@ -26,7 +27,7 @@
 a^Tb = \begin{bmatrix}3\\2\\1\end{bmatrix} \times \begin{bmatrix}-1&0&1\end{bmatrix} = \begin{bmatrix}-3&0&3\\-2&0&2\\-1&0&1\end{bmatrix}
 ```
 <!-- $$A = \left[a \atop a \atop a \atop a\right]$$ -->
-a
+2.
      2. [M] Give an example of how the outer product can be useful in ML.\
        [A] Following are the use cases where the outer product of the vectors can be useful in ML.
        1. Measure orthogonality of 2 vectors: Two vectors are said to be orthogonal of the angle between them is $90\degree$ and the outer product among them is maximum.
@@ -113,7 +114,7 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
 	Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
 	**Hint**: rely on a property of this matrix to determine its determinant.
    [A] The determinant of this matrix is $0$.
-   We can perform some linear transformation to the columns and observe one of the columns can become all $0$s which will make the determinant to be $0$.
+   We can perform some linear transformation to the columns and observe one of the columns can become all $0s$ which will make the determinant to be $0$.
 ```math
    \begin{bmatrix}1&4&-2\\-1&3&2\\3&5&-6\end{bmatrix} = -2\times \begin{bmatrix}1&4&1\\-1&3&-1\\3&5&3\end{bmatrix} = \begin{bmatrix}1&4&0\\-1&3&0\\3&5&0\end{bmatrix}
 ```
