@@ -4,10 +4,11 @@
     1. [E] What’s the geometric interpretation of the dot product of two vectors?\
        [A] In the geometric context, the dot product of 2 vecotrs is projection of one vector over another.
         For the given geometric vectors $\overrightarrow A$ and $\overrightarrow B$, their dot product is given by\
-           $$\overrightarrow A.\overrightarrow B = |\overrightarrow A|.|\overrightarrow B|.cos\theta$$ 
+           $$\overrightarrow A.\overrightarrow B = |\overrightarrow A|.|\overrightarrow B|.cos\theta$$
+       
        ![](vectors1.png)
        
-    2. [E] Given a vector $u$, find vector $v$ of unit length such that the dot product of $u$ and $v$ is maximum.\
+    3. [E] Given a vector $u$, find vector $v$ of unit length such that the dot product of $u$ and $v$ is maximum.\
        [A] Dot product of $\vec{u}$ and $\vec{v}$ is givenby $|\vec{u}|.|\vec{v}|.cos\theta$. Where $|\vec{u}|$ and $\vec{v}$ are the magnitude of the vectors respectively. This dot product will be maximum when $cos\theta$ will be maximum, which occurs when $\theta = 0$ i.e both the vector overlap with each other.\
        Since, $max |\vec{u}|.|\vec{v}|.cos\theta$\
        $= |\vec{u}|.|\vec{v}|.1$\
