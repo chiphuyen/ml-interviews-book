@@ -4,7 +4,7 @@
     1. [E] What’s the geometric interpretation of the dot product of two vectors?\
        [A] In the geometric context, the dot product of 2 vecotrs is projection of one vector over another. For the given geometric vectors $\overrightarrow A$ and $\overrightarrow B$, their dot product is given by\
            $$\overrightarrow A.\overrightarrow B = |\overrightarrow A|.|\overrightarrow B|.cos\theta$$
-       <p align="center"><img width="500em" src="imgs/vectors1.png"/></p>
+       <p align="center"><img width="500em" src="./imgs/vectors1.png"/></p>
        <!-- ![vectors](imgs/vectors1.png) -->
        
     3. [E] Given a vector $u$, find vector $v$ of unit length such that the dot product of $u$ and $v$ is maximum.\
