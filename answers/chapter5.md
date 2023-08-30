@@ -26,7 +26,7 @@
 a^Tb = \begin{bmatrix}3\\2\\1\end{bmatrix} \times \begin{bmatrix}-1&0&1\end{bmatrix} = \begin{bmatrix}-3&0&3\\-2&0&2\\-1&0&1\end{bmatrix}
 ```
 <!-- $$A = \left[a \atop a \atop a \atop a\right]$$ -->
-
+a
      2. [M] Give an example of how the outer product can be useful in ML.\
        [A] Following are the use cases where the outer product of the vectors can be useful in ML.
        1. Measure orthogonality of 2 vectors: Two vectors are said to be orthogonal of the angle between them is $90\degree$ and the outer product among them is maximum.
@@ -106,35 +106,17 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
    $$det(A-\lambda I)=0$$ whose roots give the eigen values of the Matrix $A$ as $\lambda _1$, $\lambda _2$, .. $\lambda _n$
    
 8. [M] Given the following matrix:<br>
-	$$
-	\begin{bmatrix}
-		1 & 4 & -2 \\
-		-1 & 3 & 2 \\
-		3 & 5 & -6
-	\end{bmatrix}
-	$$
+```math
+	\begin{bmatrix}1&4&-2\\-1&3&2\\3&5&-6\end{bmatrix}
+```
 
 	Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
 	**Hint**: rely on a property of this matrix to determine its determinant.
    [A] The determinant of this matrix is $0$.
    We can perform some linear transformation to the columns and observe one of the columns can become all $0$s which will make the determinant to be $0$.
-   $$
-   \begin{bmatrix}
-        1 & 4 & -2 \\
-		-1 & 3 & 2 \\
-		3 & 5 & -6
-   \end{bmatrix} = -2\times
-   \begin{bmatrix}
-        1 & 4 & 1 \\
-		-1 & 3 & -1 \\
-		3 & 5 & 3
-   \end{bmatrix} = \begin{bmatrix}
-        1 & 4 & 0 \\
-		-1 & 3 & 0 \\
-		3 & 5 & 0
-   \end{bmatrix}
-   $$
-   
+```math
+   \begin{bmatrix}1&4&-2\\-1&3&2\\3&5&-6\end{bmatrix} = -2\times \begin{bmatrix}1&4&1\\-1&3&-1\\3&5&3\end{bmatrix} = \begin{bmatrix}1&4&0\\-1&3&0\\3&5&0\end{bmatrix}
+```
 10. [M] What’s the difference between the covariance matrix $A^TA$ and the Gram matrix $AA^T$?
 
 12. Given $A \in R^{n \times m}$ and $b \in R^n$
