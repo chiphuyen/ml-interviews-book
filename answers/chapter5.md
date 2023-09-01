@@ -93,11 +93,11 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
    [A] The determinant of the matrix is given by
    $$det(A) = |A| = \sum_{i=1}^{n}A_{ij}C_{ij}$$ where $C_{ij}$ is the cofactor matrix. Determinant is only defined for square matrices. It represents the area/volume enclosed between the vectors.
    
-5. [E] What happens to the determinant of a matrix if we multiply one of its rows by a scalar $t \times R$?\
+4. [E] What happens to the determinant of a matrix if we multiply one of its rows by a scalar $t \times R$?\
    [A] As per the row scaling property, on multiplying one of the rows with a scalar $t$ the resulting determinant will be scaled by $t$. 
    $$det(t\times A) = t\times det(A)$$
    
-6. [M] A $4 \times 4$ matrix has four eigenvalues $3, 3, 2, -1$. What can we say about the trace and the determinant of this matrix?\
+5. [M] A $4 \times 4$ matrix has four eigenvalues $3, 3, 2, -1$. What can we say about the trace and the determinant of this matrix?\
    [A] Trace of a matrix is given by the sum of it's eigen values.\
    Trace of the matrix : For a diagonal matrix, the sum of all it's diagonal elements.
    $$Tr(A) = \sum_{i=1}^{n}a_{ij}$$
@@ -106,7 +106,7 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
    $\lambda$ is the eigen value of $A$ and $X$ is eigen vector of A given $X != 0$. The charecteristic equation of $A$ is given by
    $$det(A-\lambda I)=0$$ whose roots give the eigen values of the Matrix $A$ as $\lambda _1$, $\lambda _2$, .. $\lambda _n$
    
-8. [M] Given the following matrix:<br>
+6. [M] Given the following matrix:<br>
 ```math
 	\begin{bmatrix}1&4&-2\\-1&3&2\\3&5&-6\end{bmatrix}
 ```
@@ -118,10 +118,12 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
 ```math
    \begin{bmatrix}1&4&-2\\-1&3&2\\3&5&-6\end{bmatrix} = -2\times \begin{bmatrix}1&4&1\\-1&3&-1\\3&5&3\end{bmatrix} = \begin{bmatrix}1&4&0\\-1&3&0\\3&5&0\end{bmatrix}
 ```
-10. [M] What’s the difference between the covariance matrix $A^TA$ and the Gram matrix $AA^T$?
+7. [M] What’s the difference between the covariance matrix $A^TA$ and the Gram matrix $AA^T$?\
+   [A] The covariance matrix $A^TA$ is the pair wise inner product of the features/dimensions of the vector space. The diagonal of this matrix is variance of each feature. It is helpful in undertanding the relation of features with each other and can be applied to areas like feature transformation, feature selection, dimensionality reduction, etc. The Gram matrix $AA^T$ is the pair wise inner product of each vector. It is essential in understanding the relation between individual vectors. This is primarily applied in Kernel methods as a kernel function between data points and other applications where similarity between data points in high dimensional space needs to be calculated. 
 
-12. Given $A \in R^{n \times m}$ and $b \in R^n$
-	1. [M] Find $x$ such that: $Ax = b$.
+8. Given $A \in R^{n \times m}$ and $b \in R^n$
+	1. [M] Find $x$ such that: $Ax = b$.\
+           [A]
 	1. [E] When does this have a unique solution?
 	1. [M] Why is it when A has more columns than rows, $Ax = b$ has multiple solutions?
 	1. [M] Given a matrix A with no inverse. How would you solve the equation $Ax = b$? What is the pseudoinverse and how to calculate it?
