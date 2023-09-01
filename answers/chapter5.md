@@ -123,14 +123,53 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
 
 8. Given $A \in R^{n \times m}$ and $b \in R^n$
 	1. [M] Find $x$ such that: $Ax = b$.\
-           [A]
-	1. [E] When does this have a unique solution?
-	1. [M] Why is it when A has more columns than rows, $Ax = b$ has multiple solutions?
-	1. [M] Given a matrix A with no inverse. How would you solve the equation $Ax = b$? What is the pseudoinverse and how to calculate it?
-
+           [A] The solution to x can be given the following when $A$ is a square matrix, i.e, it't determinant exists.
+    $$x = A^{-1}b$$
+	1. [E] When does this have a unique solution?\
+   	   [A] The solution for this equation will not have a unique solution when the matrix $A$ is not invertible. 
+	1. [M] Why is it when A has more columns than rows, $Ax = b$ has multiple solutions?\
+           [A] When $A$ has more columns than rows, the matrrix $A$ becomes singular matrix and it's determinant is undefined. In that case, either the solution or above equation is non existant or there are infinitely many solutions.
+	1. [M] Given a matrix A with no inverse. How would you solve the equation $Ax = b$? What is the pseudoinverse and how to calculate it?\
+    	   [A] The solution for equation $Ax = b$ can always be approximated. One such approximation is defined by replacing the actual inverse with a pseudoinverse.
+    $$x = A^+b$$
+    	       The pseudo inverse also known as 'Moore-penrose inverse' can be calculated through SVD(Singular valued decomposition) of matrix $A$ which decomposed the matrix $A$ as 
+    $$A = U\Sigma V^T$$
+    Where $U$ is a matrix of dimension $m\times m$, $\Sigma$ is a diagonal matrix of dimension $m\times n$ where the diagonal values are called as the singular values and $V$ is a matrix of dimension $n\times n$. The pseudo inverse of $A$ can be written as
+     $$A^+ = V\Sigma^+ U^T$$
+    $\Sigma^+$ can be found by reciprocrating the non-zero singular values in $\Sigma$ followed by transposition.
+    
 13. Derivative is the backbone of gradient descent.
 	1. [E] What does derivative represent?
+    	   [A] In case of gradient descent, we compute gradient of the cost function which is partial derivative of the cost function w.r.t each parameter. The derivative represents the direction of the vector denoting highest increase in cost value also known as the 'slope of the curve' or 'rate of change of cost function'.
 	1. [M] What’s the difference between derivative, gradient, and Jacobian?
+    	   [A] These 3 are all inter-related terms in linear algebra
+    Derivative or first order derivative or differential is a scalar and defined for a univariate function $f(x)$ and is represented as
+    $$f'(x) = \frac{df}{dx} = \lim\limits_{h\to \infty}\frac{f(x+h) - f(x)}{h}$$
+    Gradient is a generalization term for derivative and is defined for multivariate functions. It is given by a vector of partial differential of the function w.r.t. each variable. For a function $f(x_1, x_2)$ the gradient is given by
+    $$\nabla_x f = [\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}]$$
+    Jacobian is a matrix of partial differentials for a vector valued function $f: R^n \rightarrow R^m$. For a vector valued function
+```math
+f(x) =
+\begin{bmatrix}
+f_1(x) \\
+f_2(x) \\
+\vdots \\
+f_m(x)
+\end{bmatrix}
+```
+    
+the jacobian $J$ will be given by
+
+```math
+J = \nabla_x f = \begin{bmatrix} \frac{\partial f(x)}{\partial x_1} & \dots & \frac{\partial f(x)}{\partial x_n} \end{bmatrix}
+
+= \begin{bmatrix}
+\frac{\partial f_1(x)}{\partial x_1} & \dots & \frac{\partial f_1(x)}{\partial x_n} \\
+\frac{\partial f_2(x)}{\partial x_1} & \dots & \frac{\partial f_2(x)}{\partial x_n} \\
+\vdots & & \vdots\\
+\frac{\partial f_m(x)}{\partial x_1} & \dots & \frac{\partial f_m(x)}{\partial x_n}
+\end{bmatrix}
+```
 
 14. [H] Say we have the weights $w \in R^{d \times m}$ and a mini-batch $x$ of $n$ elements, each element is of the shape $1 \times d$ so that $x \in R^{n \times d}$. We have the output $y = f(x; w) = xw$. What’s the dimension of the Jacobian $\frac{\delta y}{\delta x}$?
 15. [H] Given a very large symmetric matrix A that doesn’t fit in memory, say $A \in R^{1M \times 1M}$ and a function $f$ that can quickly compute $f(x) = Ax$ for $x \in R^{1M}$. Find the unit vector $x$ so that $x^TAx$ is minimal.
