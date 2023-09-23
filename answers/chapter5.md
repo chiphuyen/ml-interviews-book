@@ -26,7 +26,7 @@
 ```math
 a^Tb = \begin{bmatrix}3\\2\\1\end{bmatrix} \times \begin{bmatrix}-1&0&1\end{bmatrix} = \begin{bmatrix}-3&0&3\\-2&0&2\\-1&0&1\end{bmatrix}
 ```
-<!-- $$A = \left[a \atop a \atop a \atop a\right]$$ -->
+
 2.
      2. [M] Give an example of how the outer product can be useful in ML.\
        [A] Following are the use cases where the outer product of the vectors can be useful in ML.
@@ -54,18 +54,31 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
    [A] Dimension of the span of $n$ vectors is given by the rank of their augmented matrix.
 
    
-9. Norms and metrics
-	1. [E] What's a norm? What is $L_0, L_1, L_2, L_{norm}$?\
-   [A]
-        1. $L_0$ norm: Number of non zero elements in a vector.
-        2. $L_1$ norm: Sum of absolute value of vector elements.\
-           $|x|_1 = \sum{|x_i|}$
-        4. $L_2$ norm: Length of vector in Euclidean space.\
-           $||x||_2 = (\sum{x_i^2})^{\frac{1}{2}}$
-        5. $L_{\infty}$ norm: Maximum absolute value of vector elemets.\
-           $||x||_{\infty} = max{|x_i|}$
-	1. [M] How do norm and metric differ? Given a norm, make a metric. Given a metric, can we make a norm?\
-    [A]
+8. Norms and metrics
+    1. [E] What's a norm? What is $L_0, L_1, L_2, L_{norm}$?\
+       [A] For a given vector space, $V$, the norm is a function $n: V \rightarrow R$ defined to measure the length of a vector. Norm has following properties -
+	    1. Non Zero norm : $n(x) \ge 0$ for all $x \in V$ and $x  \neq 0$
+  	    2. Scale invariant : $n(\lambda \times x) = |\lambda| \times n(x)$ for all $x \in V$ and for all $\lambda \in R$.
+	    3. Triangle inequality : $n(x + y) \le n(x) + n(y)$ for all $x,y \in V$
+	
+ 	    Norm is represented by $||x|| = n(x)$. These are the different types of norms 
+
+	    1. $L_0$ norm: Number of non zero elements in a vector.
+	    2. $L_1$ norm (Manhattan Norm): Sum of absolute value of vector elements.\
+           		$||x||_1 = \sum{|x_i|}$
+	    3. $L_2$ norm (Eucledian Norm): Length of vector in Euclidean space.\
+           		$||x||_2 = (\sum{x_i^2})^{\frac{1}{2}}$
+	    4. $L_{\infty}$ norm (Maximum norm): Maximum absolute value of vector elemets.\
+           		$||x||_{\infty} = max{|x_i|}$
+    2. [M] How do norm and metric differ? Given a norm, make a metric. Given a metric, can we make a norm?\
+       [A] For a given vector space $V$, metrics is the function $m: V \times V \rightarrow R$ defined to measure the distance between two points in that vector space. The metrics has following properties -
+	    1. Non Zero Metric : $m(x,y) \ge 0 \forall x,y \in V$\
+    		   $m(x,y) = 0$ when $x = y$
+	    2. Symmetric property : $m(x,y) = m(y,x) \forall x,y \in V$
+	    3. Triangle inequality : $m(x,y) \le m(x,z) + m(z,y) \forall x,y,z \in V$
+
+	   A metric can be computed using a norm. Given two points $x, y$. The norm of difference of two vectors gives the metric of these points.
+   	  $$||x-y|| = m(x,y)$$
     
 <!-- Segment break -->
 
@@ -110,10 +123,10 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
 ```math
 	\begin{bmatrix}1&4&-2\\-1&3&2\\3&5&-6\end{bmatrix}
 ```
-
-	Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
-	**Hint**: rely on a property of this matrix to determine its determinant.
-   [A] The determinant of this matrix is $0$.
+	
+   Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
+	**Hint**: rely on a property of this matrix to determine its determinant.\
+        [A] The determinant of this matrix is $0$.
    We can perform some linear transformation to the columns and observe one of the columns can become all $0s$ which will make the determinant to be $0$.
 ```math
    \begin{bmatrix}1&4&-2\\-1&3&2\\3&5&-6\end{bmatrix} = -2\times \begin{bmatrix}1&4&1\\-1&3&-1\\3&5&3\end{bmatrix} = \begin{bmatrix}1&4&0\\-1&3&0\\3&5&0\end{bmatrix}
@@ -138,10 +151,10 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
      $$A^+ = V\Sigma^+ U^T$$
     $\Sigma^+$ can be found by reciprocrating the non-zero singular values in $\Sigma$ followed by transposition.
     
-13. Derivative is the backbone of gradient descent.
-	1. [E] What does derivative represent?
+9. Derivative is the backbone of gradient descent.
+	1. [E] What does derivative represent?\
     	   [A] In case of gradient descent, we compute gradient of the cost function which is partial derivative of the cost function w.r.t each parameter. The derivative represents the direction of the vector denoting highest increase in cost value also known as the 'slope of the curve' or 'rate of change of cost function'.
-	1. [M] What’s the difference between derivative, gradient, and Jacobian?
+	1. [M] What’s the difference between derivative, gradient, and Jacobian?\
     	   [A] These 3 are all inter-related terms in linear algebra
     Derivative or first order derivative or differential is a scalar and defined for a univariate function $f(x)$ and is represented as
     $$f'(x) = \frac{df}{dx} = \lim\limits_{h\to \infty}\frac{f(x+h) - f(x)}{h}$$
@@ -171,7 +184,17 @@ J = \nabla_x f = \begin{bmatrix} \frac{\partial f(x)}{\partial x_1} & \dots & \f
 \end{bmatrix}
 ```
 
-14. [H] Say we have the weights $w \in R^{d \times m}$ and a mini-batch $x$ of $n$ elements, each element is of the shape $1 \times d$ so that $x \in R^{n \times d}$. We have the output $y = f(x; w) = xw$. What’s the dimension of the Jacobian $\frac{\delta y}{\delta x}$?
-15. [H] Given a very large symmetric matrix A that doesn’t fit in memory, say $A \in R^{1M \times 1M}$ and a function $f$ that can quickly compute $f(x) = Ax$ for $x \in R^{1M}$. Find the unit vector $x$ so that $x^TAx$ is minimal.
+14. [H] Say we have the weights $w \in R^{d \times m}$ and a mini-batch $x$ of $n$ elements, each element is of the shape $1 \times d$ so that $x \in R^{n \times d}$. We have the output $y = f(x; w) = xw$. What’s the dimension of the Jacobian $\frac{\delta y}{\delta x}$?\
+    [A] Since, $y$ is a vector valued function $f(x; w) \in R^{n \times m}$, the Jacobian will be a matrix of dimension $m \times n$ as described in the solution above.
+16. [H] Given a very large symmetric matrix A that doesn’t fit in memory, say $A \in R^{1M \times 1M}$ and a function $f$ that can quickly compute $f(x) = Ax$ for $x \in R^{1M}$. Find the unit vector $x$ so that $x^TAx$ is minimal.
 	
-	**Hint**: Can you frame it as an optimization problem and use gradient descent to find an approximate solution?
+	**Hint**: Can you frame it as an optimization problem and use gradient descent to find an approximate solution?\
+     [A] This can be posed as a constrained optimization problem\
+          $$\min x^{T}Ax$$
+    	  $$||x|| = 1$$
+    In an unconstrained optimization problem, gradient descent can be applied by updating the optimal $x$ in every step with gradient of the function.
+    $$x_{k+1} = x_k - \eta \nabla f(x^TAx)$$
+
+    In this case, there is constraint to the optimal value $x^*$. To solve this we can add an additional step to the gradient descent algorithm which projects the optimal value at every step to the constaint space $C$. This projection function, searches for the point on the unit sphere which is closes to the optimal point in that step.
+    $$x_{k+1} = P(x_k - \eta \nabla f(x^TAx))$$
+    $$P(x) = \arg\min_{z \in C} |x - z|$$
