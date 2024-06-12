@@ -157,7 +157,7 @@ A = \begin{bmatrix}a_1\\a_2\\a_3\\a_n\end{bmatrix}
 	1. [M] What’s the difference between derivative, gradient, and Jacobian?\
     	   [A] These 3 are all inter-related terms in linear algebra
     Derivative or first order derivative or differential is a scalar and defined for a univariate function $f(x)$ and is represented as
-    $$f'(x) = \frac{df}{dx} = \lim\limits_{h\to \infty}\frac{f(x+h) - f(x)}{h}$$
+    $$f'(x) = \frac{df}{dx} = \lim\limits_{h\to 0}\frac{f(x+h) - f(x)}{h}$$
     Gradient is a generalization term for derivative and is defined for multivariate functions. It is given by a vector of partial differential of the function w.r.t. each variable. For a function $f(x_1, x_2)$ the gradient is given by
     $$\nabla_x f = [\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}]$$
     Jacobian is a matrix of partial differentials for a vector valued function $f: R^n \rightarrow R^m$. For a vector valued function
