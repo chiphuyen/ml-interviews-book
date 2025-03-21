@@ -1,5 +1,8 @@
-## Introduction to Machine Learning Interviews Book
+<p align="center">
+  <img src="contents/images/mlib-cover.png" alt="Machine Learning Interviews Book cover" width="300"/>
+</p>
 
+## Introduction to Machine Learning Interviews Book
 You can read the web-friendly version of the book [here](https://huyenchip.com/ml-interviews-book/). You can find the source code on [GitHub](https://github.com/chiphuyen/ml-interviews-book). The Discord to discuss the answers to the questions in the book is [here](https://discord.gg/XjDNDSEYjh).
 
 As a candidate, I’ve been interviewed at a dozen big companies and startups. I’ve got offers for machine learning roles at companies including Google, NVIDIA, Snap, Netflix, Primer AI, and Snorkel AI. I’ve also been rejected at many other companies.
